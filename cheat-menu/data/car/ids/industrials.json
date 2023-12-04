@@ -1,0 +1,66 @@
+[
+  {
+    "id": 499,
+    "name": "Benson"
+  },
+  {
+    "id": 498,
+    "name": "Boxville"
+  },
+  {
+    "id": 524,
+    "name": "Cement Truck"
+  },
+  {
+    "id": 532,
+    "name": "Combine Harvester"
+  },
+  {
+    "id": 578,
+    "name": "DFT-30"
+  },
+  {
+    "id": 486,
+    "name": "Dozer"
+  },
+  {
+    "id": 406,
+    "name": "Dumper"
+  },
+  {
+    "id": 455,
+    "name": "Flatbed"
+  },
+  {
+    "id": 530,
+    "name": "Forklift"
+  },
+  {
+    "id": 403,
+    "name": "Linerunner"
+  },
+  {
+    "id": 414,
+    "name": "Mule"
+  },
+  {
+    "id": 443,
+    "name": "Packer"
+  },
+  {
+    "id": 515,
+    "name": "Roadtrain"
+  },
+  {
+    "id": 514,
+    "name": "Tanker"
+  },
+  {
+    "id": 531,
+    "name": "Tractor"
+  },
+  {
+    "id": 456,
+    "name": "Yankee"
+  }
+]

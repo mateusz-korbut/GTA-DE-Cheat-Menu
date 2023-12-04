@@ -1,0 +1,44 @@
+[
+  {
+    "name": "LS - Stadium",
+    "x": 2692,
+    "y": -1699,
+    "z": 10
+  },
+  {
+    "name": "LS - Street races",
+    "x": 1767,
+    "y": -1701,
+    "z": 13
+  },
+  {
+    "name": "SF - Stadium",
+    "x": -2125,
+    "y": -444,
+    "z": 36
+  },
+  {
+    "name": "SF - Street races",
+    "x": -1918,
+    "y": 281,
+    "z": 41
+  },
+  {
+    "name": "LV - Stadium",
+    "x": 1099,
+    "y": 1607,
+    "z": 13
+  },
+  {
+    "name": "LV - Air races",
+    "x": 1702,
+    "y": 1645,
+    "z": 11
+  },
+  {
+    "name": "LV - Street races",
+    "x": 1640,
+    "y": 915,
+    "z": 11
+  }
+]

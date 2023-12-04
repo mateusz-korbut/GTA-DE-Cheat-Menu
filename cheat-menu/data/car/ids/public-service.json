@@ -1,0 +1,94 @@
+[
+  {
+    "id": 416,
+    "name": "Ambulance"
+  },
+  {
+    "id": 485,
+    "name": "Baggage"
+  },
+  {
+    "id": 433,
+    "name": "Barracks"
+  },
+  {
+    "id": 431,
+    "name": "Bus"
+  },
+  {
+    "id": 438,
+    "name": "Cabbie"
+  },
+  {
+    "id": 437,
+    "name": "Coach"
+  },
+  {
+    "id": 427,
+    "name": "Enforcer"
+  },
+  {
+    "id": 490,
+    "name": "FBI Rancher"
+  },
+  {
+    "id": 528,
+    "name": "FBI Truck"
+  },
+  {
+    "id": 407,
+    "name": "Fire Truck"
+  },
+  {
+    "id": 544,
+    "name": "Fire Truck Ladder"
+  },
+  {
+    "id": 523,
+    "name": "HPV-1000"
+  },
+  {
+    "id": 596,
+    "name": "Police LS"
+  },
+  {
+    "id": 597,
+    "name": "Police SF"
+  },
+  {
+    "id": 599,
+    "name": "Police Ranger"
+  },
+  {
+    "id": 432,
+    "name": "Rhino"
+  },
+  {
+    "id": 601,
+    "name": "S.W.A.T."
+  },
+  {
+    "id": 574,
+    "name": "Sweeper"
+  },
+  {
+    "id": 420,
+    "name": "Taxi"
+  },
+  {
+    "id": 525,
+    "name": "Tow Truck"
+  },
+  {
+    "id": 408,
+    "name": "Trashmaster"
+  },
+  {
+    "id": 583,
+    "name": "Tug"
+  },
+  {
+    "id": 552,
+    "name": "Utility Van"
+  }
+]

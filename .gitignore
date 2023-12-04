@@ -1,0 +1,5 @@
+﻿.idea
+.config
+
+CLEO_PLUGINS/*
+!CLEO_PLUGINS/ImGuiReduxWin64.cleo

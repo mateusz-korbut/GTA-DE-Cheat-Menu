@@ -1,0 +1,770 @@
+{
+  "1000": {
+    "slot": "Spoilers",
+    "name": "Pro"
+  },
+  "1001": {
+    "slot": "Spoilers",
+    "name": "Win"
+  },
+  "1002": {
+    "slot": "Spoilers",
+    "name": "Drag"
+  },
+  "1003": {
+    "slot": "Spoilers",
+    "name": "Alpha"
+  },
+  "1004": {
+    "slot": "Hood",
+    "name": "Champ Scoop"
+  },
+  "1005": {
+    "slot": "Hood",
+    "name": "Fury Scoop"
+  },
+  "1006": {
+    "slot": "Roof",
+    "name": "Roof Scoop"
+  },
+  "1007": {
+    "slot": "SideSkirts",
+    "name": "Right Sideskirt"
+  },
+  "1008": {
+    "slot": "Nitro",
+    "name": "5 times"
+  },
+  "1009": {
+    "slot": "Nitro",
+    "name": "2 times"
+  },
+  "1010": {
+    "slot": "Nitro",
+    "name": "10 times"
+  },
+  "1011": {
+    "slot": "Hood",
+    "name": "Race Scoop"
+  },
+  "1012": {
+    "slot": "Hood",
+    "name": "Worx Scoop"
+  },
+  "1013": {
+    "slot": "Lights",
+    "name": "Round Fog"
+  },
+  "1014": {
+    "slot": "Spoilers",
+    "name": "Champ"
+  },
+  "1015": {
+    "slot": "Spoilers",
+    "name": "Race"
+  },
+  "1016": {
+    "slot": "Spoilers",
+    "name": "Worx"
+  },
+  "1017": {
+    "slot": "SideSkirts",
+    "name": "Left Sideskirt"
+  },
+  "1018": {
+    "slot": "Exhausts",
+    "name": "Upswept"
+  },
+  "1019": {
+    "slot": "Exhausts",
+    "name": "Twin"
+  },
+  "1020": {
+    "slot": "Exhausts",
+    "name": "Large"
+  },
+  "1021": {
+    "slot": "Exhausts",
+    "name": "Medium"
+  },
+  "1022": {
+    "slot": "Exhausts",
+    "name": "Small"
+  },
+  "1023": {
+    "slot": "Spoilers",
+    "name": "Fury"
+  },
+  "1024": {
+    "slot": "Lights",
+    "name": "Square Fog"
+  },
+  "1025": {
+    "slot": "Wheels",
+    "name": "Offroad"
+  },
+  "1026": {
+    "slot": "SideSkirts",
+    "name": "Right Alien Sideskirt"
+  },
+  "1027": {
+    "slot": "SideSkirts",
+    "name": "Left Alien Sideskirt"
+  },
+  "1028": {
+    "slot": "Exhausts",
+    "name": "Alien"
+  },
+  "1029": {
+    "slot": "Exhausts",
+    "name": "X-Flow"
+  },
+  "1030": {
+    "slot": "SideSkirts",
+    "name": "Left X-Flow Sideskirt"
+  },
+  "1031": {
+    "slot": "SideSkirts",
+    "name": "Right X-Flow Sideskirt"
+  },
+  "1032": {
+    "slot": "Roof",
+    "name": "Alien Roof Vent"
+  },
+  "1033": {
+    "slot": "Roof",
+    "name": "X-Flow Roof Vent"
+  },
+  "1034": {
+    "slot": "Exhausts",
+    "name": "Alien"
+  },
+  "1035": {
+    "slot": "Roof",
+    "name": "X-Flow Roof Vent"
+  },
+  "1036": {
+    "slot": "SideSkirts",
+    "name": "Right Alien Sideskirt"
+  },
+  "1037": {
+    "slot": "Exhausts",
+    "name": "X-Flow"
+  },
+  "1038": {
+    "slot": "Roof",
+    "name": "Alien Roof Vent"
+  },
+  "1039": {
+    "slot": "SideSkirts",
+    "name": "Left X-Flow Sideskirt"
+  },
+  "1040": {
+    "slot": "SideSkirts",
+    "name": "Left Alien Sideskirt"
+  },
+  "1041": {
+    "slot": "SideSkirts",
+    "name": "Right X-Flow Sideskirt"
+  },
+  "1042": {
+    "slot": "SideSkirts",
+    "name": "Right Chrome Sideskirt"
+  },
+  "1043": {
+    "slot": "Exhausts",
+    "name": "Slamin"
+  },
+  "1044": {
+    "slot": "Exhausts",
+    "name": "Chrome"
+  },
+  "1045": {
+    "slot": "Exhausts",
+    "name": "X-Flow"
+  },
+  "1046": {
+    "slot": "Exhausts",
+    "name": "Alien"
+  },
+  "1047": {
+    "slot": "SideSkirts",
+    "name": "Right Alien Sideskirt"
+  },
+  "1048": {
+    "slot": "SideSkirts",
+    "name": "Right X-Flow Sideskirt"
+  },
+  "1049": {
+    "slot": "Spoilers",
+    "name": "Alien"
+  },
+  "1050": {
+    "slot": "Spoilers",
+    "name": "X-Flow"
+  },
+  "1051": {
+    "slot": "SideSkirts",
+    "name": "Left Alien Sideskirt"
+  },
+  "1052": {
+    "slot": "SideSkirts",
+    "name": "Left X-Flow Sideskirt"
+  },
+  "1053": {
+    "slot": "Roof",
+    "name": "X-Flow"
+  },
+  "1054": {
+    "slot": "Roof",
+    "name": "Alien"
+  },
+  "1055": {
+    "slot": "Roof",
+    "name": "Alien"
+  },
+  "1056": {
+    "slot": "SideSkirts",
+    "name": "Right Alien Sideskirt"
+  },
+  "1057": {
+    "slot": "SideSkirts",
+    "name": "Right X-Flow Sideskirt"
+  },
+  "1058": {
+    "slot": "Spoilers",
+    "name": "Alien"
+  },
+  "1059": {
+    "slot": "Exhausts",
+    "name": "X-Flow"
+  },
+  "1060": {
+    "slot": "Spoilers",
+    "name": "X-Flow"
+  },
+  "1061": {
+    "slot": "Roof",
+    "name": "X-Flow"
+  },
+  "1062": {
+    "slot": "SideSkirts",
+    "name": "Left Alien Sideskirt"
+  },
+  "1063": {
+    "slot": "SideSkirts",
+    "name": "Left X-Flow Sideskirt"
+  },
+  "1064": {
+    "slot": "Exhausts",
+    "name": "Alien"
+  },
+  "1065": {
+    "slot": "Exhausts",
+    "name": "Alien"
+  },
+  "1066": {
+    "slot": "Exhausts",
+    "name": "X-Flow"
+  },
+  "1067": {
+    "slot": "Roof",
+    "name": "Alien"
+  },
+  "1068": {
+    "slot": "Roof",
+    "name": "X-Flow"
+  },
+  "1069": {
+    "slot": "SideSkirts",
+    "name": "Right Alien Sideskirt"
+  },
+  "1070": {
+    "slot": "SideSkirts",
+    "name": "Right X-Flow Sideskirt"
+  },
+  "1071": {
+    "slot": "SideSkirts",
+    "name": "Left Alien Sideskirt"
+  },
+  "1072": {
+    "slot": "SideSkirts",
+    "name": "Left X-Flow Sideskirt"
+  },
+  "1073": {
+    "slot": "Wheels",
+    "name": "Shadow"
+  },
+  "1074": {
+    "slot": "Wheels",
+    "name": "Mega"
+  },
+  "1075": {
+    "slot": "Wheels",
+    "name": "Rimshine"
+  },
+  "1076": {
+    "slot": "Wheels",
+    "name": "Wires"
+  },
+  "1077": {
+    "slot": "Wheels",
+    "name": "Classic"
+  },
+  "1078": {
+    "slot": "Wheels",
+    "name": "Twist"
+  },
+  "1079": {
+    "slot": "Wheels",
+    "name": "Cutter"
+  },
+  "1080": {
+    "slot": "Wheels",
+    "name": "Switch"
+  },
+  "1081": {
+    "slot": "Wheels",
+    "name": "Grove"
+  },
+  "1082": {
+    "slot": "Wheels",
+    "name": "Import"
+  },
+  "1083": {
+    "slot": "Wheels",
+    "name": "Dollar"
+  },
+  "1084": {
+    "slot": "Wheels",
+    "name": "Trance"
+  },
+  "1085": {
+    "slot": "Wheels",
+    "name": "Atomic"
+  },
+  "1086": {
+    "slot": "CarStereo",
+    "name": "Stereo"
+  },
+  "1087": {
+    "slot": "Hydraulics",
+    "name": "Hydraulics"
+  },
+  "1088": {
+    "slot": "Roof",
+    "name": "Alien"
+  },
+  "1089": {
+    "slot": "Exhausts",
+    "name": "X-Flow"
+  },
+  "1090": {
+    "slot": "SideSkirts",
+    "name": "Right Alien Sideskirt"
+  },
+  "1091": {
+    "slot": "Roof",
+    "name": "X-Flow"
+  },
+  "1092": {
+    "slot": "Exhausts",
+    "name": "Alien"
+  },
+  "1093": {
+    "slot": "SideSkirts",
+    "name": "Left X-Flow Sideskirt"
+  },
+  "1094": {
+    "slot": "SideSkirts",
+    "name": "Left Alien Sideskirt"
+  },
+  "1095": {
+    "slot": "SideSkirts",
+    "name": "Right X-Flow Sideskirt"
+  },
+  "1096": {
+    "slot": "Wheels",
+    "name": "Ahab"
+  },
+  "1097": {
+    "slot": "Wheels",
+    "name": "Virtual"
+  },
+  "1098": {
+    "slot": "Wheels",
+    "name": "Access"
+  },
+  "1099": {
+    "slot": "SideSkirts",
+    "name": "Left Chrome Sideskirt"
+  },
+  "1100": {
+    "slot": "FrontBullbars",
+    "name": "Chrome Grill"
+  },
+  "1101": {
+    "slot": "SideSkirts",
+    "name": "Left Chrome Flames Sideskirt"
+  },
+  "1102": {
+    "slot": "SideSkirts",
+    "name": "Left Chrome Strip Sideskirt"
+  },
+  "1103": {
+    "slot": "Roof",
+    "name": "Covertible"
+  },
+  "1104": {
+    "slot": "Exhausts",
+    "name": "Chrome"
+  },
+  "1105": {
+    "slot": "Exhausts",
+    "name": "Slamin"
+  },
+  "1106": {
+    "slot": "SideSkirts",
+    "name": "Right Chrome Arches Sideskirt"
+  },
+  "1107": {
+    "slot": "SideSkirts",
+    "name": "Left Chrome Strip Sideskirt"
+  },
+  "1108": {
+    "slot": "SideSkirts",
+    "name": "Right Chrome Strip Sideskirt"
+  },
+  "1109": {
+    "slot": "RearBullbars",
+    "name": "Chrome"
+  },
+  "1110": {
+    "slot": "RearBullbars",
+    "name": "Slamin"
+  },
+  "1113": {
+    "slot": "Exhausts",
+    "name": "Chrome"
+  },
+  "1114": {
+    "slot": "Exhausts",
+    "name": "Slamin"
+  },
+  "1115": {
+    "slot": "FrontBullbars",
+    "name": "Chrome"
+  },
+  "1116": {
+    "slot": "FrontBullbars",
+    "name": "Slamin"
+  },
+  "1117": {
+    "slot": "FrontBumper",
+    "name": "Chrome"
+  },
+  "1118": {
+    "slot": "SideSkirts",
+    "name": "Right Chrome Trim Sideskirt"
+  },
+  "1119": {
+    "slot": "SideSkirts",
+    "name": "Right Wheelcovers Sideskirt"
+  },
+  "1120": {
+    "slot": "SideSkirts",
+    "name": "Left Chrome Trim Sideskirt"
+  },
+  "1121": {
+    "slot": "SideSkirts",
+    "name": "Left Wheelcovers Sideskirt"
+  },
+  "1122": {
+    "slot": "SideSkirts",
+    "name": "Right Chrome Flames Sideskirt"
+  },
+  "1123": {
+    "slot": "RearBullbars",
+    "name": "Chrome Bars"
+  },
+  "1124": {
+    "slot": "SideSkirts",
+    "name": "Left Chrome Arches Sideskirt"
+  },
+  "1125": {
+    "slot": "Lights",
+    "name": "Bullbar Chrome Lights"
+  },
+  "1126": {
+    "slot": "Exhausts",
+    "name": "Chrome Exhaust"
+  },
+  "1127": {
+    "slot": "Exhausts",
+    "name": "Slamin Exhaust"
+  },
+  "1128": {
+    "slot": "Roof",
+    "name": "Vinyl Hardtop"
+  },
+  "1129": {
+    "slot": "Exhausts",
+    "name": "Chrome"
+  },
+  "1130": {
+    "slot": "Roof",
+    "name": "Hardtop"
+  },
+  "1131": {
+    "slot": "Roof",
+    "name": "Softtop"
+  },
+  "1132": {
+    "slot": "Exhausts",
+    "name": "Slamin"
+  },
+  "1133": {
+    "slot": "SideSkirts",
+    "name": "Right Chrome Strip Sideskirt"
+  },
+  "1134": {
+    "slot": "SideSkirts",
+    "name": "Right Chrome Strip Sideskirt"
+  },
+  "1135": {
+    "slot": "Exhausts",
+    "name": "Slamin"
+  },
+  "1136": {
+    "slot": "Exhausts",
+    "name": "Chrome"
+  },
+  "1137": {
+    "slot": "SideSkirts",
+    "name": "Left Chrome Strip Sideskirt"
+  },
+  "1138": {
+    "slot": "Spoilers",
+    "name": "Alien"
+  },
+  "1139": {
+    "slot": "Spoilers",
+    "name": "X-Flow"
+  },
+  "1140": {
+    "slot": "RearBumper",
+    "name": "X-Flow"
+  },
+  "1141": {
+    "slot": "RearBumper",
+    "name": "Alien"
+  },
+  "1142": {
+    "slot": "Vents",
+    "name": "Left Oval Vents"
+  },
+  "1143": {
+    "slot": "Vents",
+    "name": "Right Oval Vents"
+  },
+  "1144": {
+    "slot": "Vents",
+    "name": "Left Square Vents"
+  },
+  "1145": {
+    "slot": "Vents",
+    "name": "Right Square Vents"
+  },
+  "1146": {
+    "slot": "Spoilers",
+    "name": "X-Flow"
+  },
+  "1147": {
+    "slot": "Spoilers",
+    "name": "Alien"
+  },
+  "1148": {
+    "slot": "RearBumper",
+    "name": "X-Flow"
+  },
+  "1149": {
+    "slot": "RearBumper",
+    "name": "Alien"
+  },
+  "1150": {
+    "slot": "RearBumper",
+    "name": "Alien"
+  },
+  "1151": {
+    "slot": "RearBumper",
+    "name": "X-Flow"
+  },
+  "1152": {
+    "slot": "FrontBumper",
+    "name": "X-Flow"
+  },
+  "1153": {
+    "slot": "FrontBumper",
+    "name": "Alien"
+  },
+  "1154": {
+    "slot": "RearBumper",
+    "name": "Alien"
+  },
+  "1155": {
+    "slot": "FrontBumper",
+    "name": "Alien"
+  },
+  "1156": {
+    "slot": "RearBumper",
+    "name": "X-Flow"
+  },
+  "1157": {
+    "slot": "FrontBumper",
+    "name": "X-Flow"
+  },
+  "1158": {
+    "slot": "Spoilers",
+    "name": "X-Flow"
+  },
+  "1159": {
+    "slot": "RearBumper",
+    "name": "Alien"
+  },
+  "1160": {
+    "slot": "FrontBumper",
+    "name": "Alien"
+  },
+  "1161": {
+    "slot": "RearBumper",
+    "name": "X-Flow"
+  },
+  "1162": {
+    "slot": "Spoilers",
+    "name": "Alien"
+  },
+  "1163": {
+    "slot": "Spoilers",
+    "name": "X-Flow"
+  },
+  "1164": {
+    "slot": "Spoilers",
+    "name": "Alien"
+  },
+  "1165": {
+    "slot": "FrontBumper",
+    "name": "X-Flow"
+  },
+  "1166": {
+    "slot": "FrontBumper",
+    "name": "Alien"
+  },
+  "1167": {
+    "slot": "RearBumper",
+    "name": "X-Flow"
+  },
+  "1168": {
+    "slot": "RearBumper",
+    "name": "Alien"
+  },
+  "1169": {
+    "slot": "FrontBumper",
+    "name": "Alien"
+  },
+  "1170": {
+    "slot": "FrontBumper",
+    "name": "X-Flow"
+  },
+  "1171": {
+    "slot": "FrontBumper",
+    "name": "Alien"
+  },
+  "1172": {
+    "slot": "FrontBumper",
+    "name": "X-Flow"
+  },
+  "1173": {
+    "slot": "FrontBumper",
+    "name": "X-Flow"
+  },
+  "1174": {
+    "slot": "FrontBumper",
+    "name": "Chrome"
+  },
+  "1175": {
+    "slot": "FrontBumper",
+    "name": "Slamin"
+  },
+  "1176": {
+    "slot": "RearBumper",
+    "name": "Chrome"
+  },
+  "1177": {
+    "slot": "RearBumper",
+    "name": "Slamin"
+  },
+  "1178": {
+    "slot": "RearBumper",
+    "name": "Slamin"
+  },
+  "1179": {
+    "slot": "FrontBumper",
+    "name": "Chrome"
+  },
+  "1180": {
+    "slot": "RearBumper",
+    "name": "Chrome"
+  },
+  "1181": {
+    "slot": "FrontBumper",
+    "name": "Slamin"
+  },
+  "1182": {
+    "slot": "FrontBumper",
+    "name": "Chrome"
+  },
+  "1183": {
+    "slot": "RearBumper",
+    "name": "Slamin"
+  },
+  "1184": {
+    "slot": "RearBumper",
+    "name": "Chrome"
+  },
+  "1185": {
+    "slot": "FrontBumper",
+    "name": "Slamin"
+  },
+  "1186": {
+    "slot": "RearBumper",
+    "name": "Slamin"
+  },
+  "1187": {
+    "slot": "RearBumper",
+    "name": "Chrome"
+  },
+  "1188": {
+    "slot": "FrontBumper",
+    "name": "Slamin"
+  },
+  "1189": {
+    "slot": "FrontBumper",
+    "name": "Chrome"
+  },
+  "1190": {
+    "slot": "FrontBumper",
+    "name": "Slamin"
+  },
+  "1191": {
+    "slot": "FrontBumper",
+    "name": "Chrome"
+  },
+  "1192": {
+    "slot": "RearBumper",
+    "name": "Chrome"
+  },
+  "1193": {
+    "slot": "RearBumper",
+    "name": "Slamin"
+  }
+}
