@@ -29,7 +29,7 @@ export class TeleportTab extends PlayerTab {
         });
     }
 
-    updateGameState() {
+    async updateGameState() {
         if (!Pad.IsKeyPressed(KeyCode.Ctrl)) {
             return;
         }
@@ -50,7 +50,7 @@ export class TeleportTab extends PlayerTab {
             showTextBox(`Teleported to previous position`);
         }
 
-        wait(250);
+        await asyncWait(250);
     }
 }
 

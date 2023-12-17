@@ -23,9 +23,9 @@ export class CheatsTab extends PlayerTab {
         this.stopCarActive = ImGui.Checkbox('SHIFT + S - Stop car', this.stopCarActive);
     }
 
-    updateGameState() {
+    async updateGameState() {
         this.checkCheatsShortcuts();
-        this.checkCarShortcuts();
+        await this.checkCarShortcuts();
     }
 
     private checkCheatsShortcuts() {
@@ -42,7 +42,7 @@ export class CheatsTab extends PlayerTab {
         }
     }
 
-    private checkCarShortcuts() {
+    private async checkCarShortcuts() {
         const car = getCurrentCar(this.playerChar);
 
         if (car) {
@@ -54,15 +54,15 @@ export class CheatsTab extends PlayerTab {
                 car.setHeading(0);
             }
 
-            this.checkCarSpeedShortcuts(car);
+            await this.checkCarSpeedShortcuts(car);
         }
     }
 
-    private checkCarSpeedShortcuts(car: Car) {
+    private async checkCarSpeedShortcuts(car: Car) {
         if (Pad.IsKeyPressed(KeyCode.Shift)) {
             if (this.speedUpCarActive && Pad.IsKeyPressed(KeyCode.W)) {
                 speedUpCar(car);
-                wait(250);
+                await asyncWait(250);
             }
 
             if (this.stopCarActive && Pad.IsKeyPressed(KeyCode.S)) {

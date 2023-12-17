@@ -1,13 +1,11 @@
 /// <reference path='../../.config/sa.d.ts' />
 import { BlipColor } from '../../.config/enums';
 
-export const addBlipTo = async (
+export const addBlipTo = (
     to: Car | Char | Vector3 | Pickup | ScriptObject,
-    removeAfter = 2000,
+    removeAfter = 4000,
     color = BlipColor.Green,
 ) => {
-    // FIXME async
-    return;
     let blip: Blip;
 
     if (to instanceof Char) {
@@ -26,6 +24,5 @@ export const addBlipTo = async (
     }
     blip.changeColor(color);
 
-    await asyncWait(removeAfter);
-    blip.remove();
+    setTimeout(() => blip.remove(), removeAfter);
 }

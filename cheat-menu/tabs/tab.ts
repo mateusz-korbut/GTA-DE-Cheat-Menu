@@ -16,7 +16,7 @@ export abstract class Tab {
     /*
     * It is called once per game frame, allowing you to execute any necessary logic or updates game logic.
     * */
-    abstract updateGameState();
+    abstract updateGameState(): void | Promise<void>;
 }
 
 export abstract class PlayerTab extends Tab {

@@ -83,8 +83,8 @@ export class CarTab extends PlayerTab {
 
     }
 
-    private spawnCar(modelId: number) {
-        loadModel(modelId);
+    private async spawnCar(modelId: number) {
+        await loadModel(modelId);
 
         this.lastSpawnedCar?.delete();
 

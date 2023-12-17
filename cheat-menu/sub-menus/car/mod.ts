@@ -77,8 +77,8 @@ export class CarModMenu {
         this.addMod(car, newModId);
     }
 
-    private addMod(car: Car, modId: number) {
-        loadModel(modId);
+    private async addMod(car: Car, modId: number) {
+        await loadModel(modId);
         car.addMod(modId);
     }
 

@@ -15,7 +15,6 @@ export const speedUpCar = (car: Car, multiplier = SPEED_MULTIPLIER) => {
 
     showTextBox(`Speed set to ${ newSpeed.toFixed(0) }`);
     car.setForwardSpeed(newSpeed);
-    wait(250);
 }
 
 export const makeCarInvincible = (car: Car) => {
