@@ -335,7 +335,7 @@ export const ZERO_FIFTY_RANGE: StatisticRange = {
 
 export const UNIQUE_JUMPS_RANGE: StatisticRange = {
     min: 0,
-    max: 50,
+    max: 70,
 };
 
 export const PLAYER_STATISTICS: Partial<Statistic>[] = [
