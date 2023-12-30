@@ -1,4 +1,6 @@
 /// <reference path='../../.config/sa.d.ts' />
+import { loadModel } from '../functions/index';
+
 import { WEAPON_CATEGORIES } from '../data/index';
 
 export const renderWeaponList = (char: Char) => {
@@ -12,7 +14,10 @@ export const renderWeaponList = (char: Char) => {
         );
 
         if (newWeaponIndex !== charOptionIndex) {
-            char.giveWeapon(options[newWeaponIndex].id, infiniteAmmo);
+            const newWeapon = options[newWeaponIndex];
+
+            loadModel(newWeapon.weaponModel);
+            char.giveWeapon(newWeapon.id, infiniteAmmo);
         }
     });
 }
