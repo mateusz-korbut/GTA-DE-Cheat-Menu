@@ -32,10 +32,10 @@ export class StatisticsTab extends Tab {
             header: 'Weapons',
             statistics: WEAPON_STATISTICS.map(addValueStatistic),
         },
-        {
-            header: 'Girlfriends',
-            statistics: GIRLFRIEND_STATISTICS.map(addValueStatistic),
-        },
+        // {
+        //     header: 'Girlfriends',
+        //     statistics: GIRLFRIEND_STATISTICS.map(addValueStatistic),
+        // },
         {
             header: 'Collectibles',
             statistics: COLLECTIBLES_STATISTICS.map(addValueStatistic),

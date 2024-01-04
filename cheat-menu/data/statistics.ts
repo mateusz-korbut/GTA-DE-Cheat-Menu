@@ -351,14 +351,14 @@ export const PLAYER_STATISTICS: Partial<Statistic>[] = [
         id: Statistics.Muscle,
         name: 'Muscle',
     },
-    {
-        id: Statistics.Respect,
-        name: 'Respect',
-    },
-    {
-        id: Statistics.SexAppeal,
-        name: 'Sex Appeal',
-    },
+    // {
+    //     id: Statistics.Respect,
+    //     name: 'Respect',
+    // },
+    // {
+    //     id: Statistics.SexAppeal,
+    //     name: 'Sex Appeal',
+    // },
     {
         id: Statistics.LungCapacity,
         name: 'Lung capacity',
@@ -370,10 +370,10 @@ export const PLAYER_STATISTICS: Partial<Statistic>[] = [
 ];
 
 export const DRIVING_STATISTICS: Partial<Statistic>[] = [
-    {
-        id: Statistics.DrivingSkill,
-        name: 'Driving',
-    },
+    // {
+    //     id: Statistics.DrivingSkill,
+    //     name: 'Driving',
+    // },
     {
         id: Statistics.FlyingSkill,
         name: 'Flying',
