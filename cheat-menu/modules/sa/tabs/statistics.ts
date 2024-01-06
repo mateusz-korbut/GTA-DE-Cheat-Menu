@@ -1,4 +1,6 @@
-/// <reference path='../../.config/sa.d.ts' />
+/// <reference path='../../../../.config/sa.d.ts' />
+import { Tab } from '../../../tabs/tab';
+
 import {
     COLLECTIBLES_STATISTICS,
     DRIVING_STATISTICS,
@@ -7,9 +9,7 @@ import {
     Statistic,
     WEAPON_STATISTICS
 } from '../data/statistics';
-
-import { renderStatisticsFor } from '../sub-menus/index';
-import { Tab } from './tab';
+import { ZERO_THOUSAND_RANGE } from '../data/index';
 
 const addValueStatistic = ({ id, name, range }: Partial<Statistic>): Statistic => ({
     id,
@@ -45,11 +45,31 @@ export class StatisticsTab extends Tab {
     renderTabUI() {
         this.statistics.forEach(({ header, statistics }) => {
             if (ImGui.CollapsingHeader(header)) {
-                renderStatisticsFor(statistics);
+                this.renderStatisticsFor(statistics);
             }
         });
     }
 
     updateGameState() {
+    }
+
+    private renderStatisticsFor(statistics: Statistic[]) {
+        statistics.forEach(({ id, name, value, range }, statisticsIndex) => {
+            const min = range?.min ?? ZERO_THOUSAND_RANGE.min;
+            const max = range?.max ?? ZERO_THOUSAND_RANGE.max;
+            const newValue = ImGui.SliderInt(name, value, min, max);
+
+            if (newValue !== value) {
+                const difference = Math.abs(newValue - value);
+
+                if (newValue < value) {
+                    Stat.DecrementInt(id, difference);
+                } else {
+                    Stat.IncrementIntNoMessage(id, difference);
+                }
+
+                statistics[statisticsIndex].value = newValue;
+            }
+        })
     }
 }

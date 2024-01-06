@@ -1,6 +1,5 @@
-/// <reference path='../../.config/sa.d.ts' />
 import { KeyCode } from '../../.config/enums';
-import { clearWantedLevel, getCurrentCar, speedUpCar } from '../functions/index';
+import { MenuCar } from '../models/index';
 
 import { MAX_HEALTH } from '../data/index';
 
@@ -11,21 +10,20 @@ export class CheatsTab extends PlayerTab {
     private flipCarActive = true;
     private addHealthActive = true;
     private saveGameActive = true;
-    private speedUpCarActive = true;
-    private stopCarActive = true;
 
     renderTabUI() {
         this.addHealthActive = ImGui.Checkbox('F2 - Add health / Fix car', this.addHealthActive);
         this.clearWantedLevelActive = ImGui.Checkbox('F3 - Clear wanted level', this.clearWantedLevelActive);
         this.flipCarActive = ImGui.Checkbox('F4 - Fip car', this.flipCarActive);
         this.saveGameActive = ImGui.Checkbox('F5 - Save game', this.saveGameActive);
-        this.speedUpCarActive = ImGui.Checkbox('SHIFT + W - Speed car', this.speedUpCarActive);
-        this.stopCarActive = ImGui.Checkbox('SHIFT + S - Stop car', this.stopCarActive);
     }
 
     updateGameState() {
         this.checkCheatsShortcuts();
         this.checkCarShortcuts();
+    }
+
+    protected moreCarShortcuts(car: MenuCar) {
     }
 
     private checkCheatsShortcuts() {
@@ -34,7 +32,7 @@ export class CheatsTab extends PlayerTab {
         }
 
         if (this.clearWantedLevelActive && Pad.IsKeyPressed(KeyCode.F3)) {
-            clearWantedLevel(this.player);
+            this.player.alterWantedLevel(0);
         }
 
         if (this.saveGameActive && Pad.IsKeyPressed(KeyCode.F5)) {
@@ -43,7 +41,7 @@ export class CheatsTab extends PlayerTab {
     }
 
     private checkCarShortcuts() {
-        const car = getCurrentCar(this.playerChar);
+        const car = this.playerChar.getCurrentCar();
 
         if (car) {
             if (this.addHealthActive && Pad.IsKeyPressed(KeyCode.F2)) {
@@ -51,24 +49,10 @@ export class CheatsTab extends PlayerTab {
             }
 
             if (this.flipCarActive && Pad.IsKeyPressed(KeyCode.F4)) {
-                car.setHeading(0);
+                car.setCarOnWheels();
             }
 
-            this.checkCarSpeedShortcuts(car);
-        }
-    }
-
-    private checkCarSpeedShortcuts(car: Car) {
-        if (Pad.IsKeyPressed(KeyCode.Shift)) {
-            if (this.speedUpCarActive && Pad.IsKeyPressed(KeyCode.W)) {
-                speedUpCar(car);
-                wait(250);
-            }
-
-            if (this.stopCarActive && Pad.IsKeyPressed(KeyCode.S)) {
-                showTextBox(`BREAK`);
-                car.setForwardSpeed(0);
-            }
+            this.moreCarShortcuts(car);
         }
     }
 }

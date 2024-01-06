@@ -1,0 +1,70 @@
+[
+  {
+    "id": 146,
+    "name": "Ambulance"
+  },
+  {
+    "id": 137,
+    "name": "Fire Truck"
+  },
+  {
+    "id": 200,
+    "name": "Patriot"
+  },
+  {
+    "id": 163,
+    "name": "Barracks OL"
+  },
+  {
+    "id": 156,
+    "name": "Police"
+  },
+  {
+    "id": 157,
+    "name": "Enforcer"
+  },
+  {
+    "id": 220,
+    "name": "FBI Rancher"
+  },
+  {
+    "id": 147,
+    "name": "FBI Washington"
+  },
+  {
+    "id": 162,
+    "name": "Rhino"
+  },
+  {
+    "id": 236,
+    "name": "Cheetah Police"
+  },
+  {
+    "id": 161,
+    "name": "Bus"
+  },
+  {
+    "id": 168,
+    "name": "Cabbie"
+  },
+  {
+    "id": 167,
+    "name": "Coach"
+  },
+  {
+    "id": 216,
+    "name": "Kaufman Cab"
+  },
+  {
+    "id": 150,
+    "name": "Taxi"
+  },
+  {
+    "id": 138,
+    "name": "Trashmaster"
+  },
+  {
+    "id": 188,
+    "name": "Zebra Cab"
+  }
+]

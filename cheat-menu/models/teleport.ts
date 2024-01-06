@@ -1,5 +1,4 @@
 export interface Location {
     name: string;
-    locations: Vector3[];
-    lastPosition: number;
+    locations: ({ name: string } & Vector3)[];
 }

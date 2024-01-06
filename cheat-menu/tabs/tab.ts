@@ -1,4 +1,5 @@
 import { Events } from '../data/events';
+import { MenuChar, MenuPlayer } from '../models/index';
 
 export abstract class Tab {
     constructor() {
@@ -7,7 +8,6 @@ export abstract class Tab {
             () => this.updateGameState(),
         );
     }
-
     /*
     * This method is called when the tab is open and is responsible for generating the tab's UI layout
     * */
@@ -21,8 +21,8 @@ export abstract class Tab {
 
 export abstract class PlayerTab extends Tab {
     constructor(
-        protected readonly player: Player,
-        protected readonly playerChar: Char) {
+        protected readonly player: MenuPlayer,
+        protected readonly playerChar: MenuChar) {
         super();
     }
 }

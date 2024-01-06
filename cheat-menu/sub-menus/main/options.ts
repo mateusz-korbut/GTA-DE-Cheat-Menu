@@ -1,5 +1,3 @@
-/// <reference path='../../../.config/sa.d.ts' />
-
 export class MainOptions {
     private _isInfiniteHealthChecked = false;
     private _isInfiniteAmmoChecked = false;

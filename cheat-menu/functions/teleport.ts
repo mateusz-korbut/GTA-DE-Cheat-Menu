@@ -1,12 +1,11 @@
-/// <reference path='../../.config/sa.d.ts' />
-import { getCurrentCar } from './car';
+import { MenuChar } from '../models/index';
 
-export const teleport = (char: Char, to: Vector3 | undefined) => {
+export const teleport = (char: MenuChar, to: Vector3 | undefined) => {
     if (!to) {
         return;
     }
     const { x, y, z } = to;
-    const currentCar = getCurrentCar(char);
+    const currentCar = char.getCurrentCar();
 
     if (currentCar) {
         currentCar.setCoordinates(x, y, z);
@@ -15,7 +14,7 @@ export const teleport = (char: Char, to: Vector3 | undefined) => {
     }
 }
 
-export const getPos = (char: Char): Vector3 => {
-    return getCurrentCar(char)?.getOffsetInWorldCoords(0, 0, 0)
+export const getPos = (char: MenuChar): Vector3 => {
+    return char.getCurrentCar()?.getOffsetInWorldCoords(0, 0, 0)
         || char.getOffsetInWorldCoords(0, 0, 0);
 }

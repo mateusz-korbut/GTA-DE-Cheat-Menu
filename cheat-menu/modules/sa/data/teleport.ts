@@ -8,8 +8,9 @@ import SAFE_HOUSES_LOCATIONS from './teleports/safe-houses.json';
 import SCHOOLS_LOCATIONS from './teleports/schools.json';
 import TATTOOS_LOCATIONS from './teleports/tattoos.json';
 
+import { Location } from '../../../models/index';
 
-export const TELEPORT_OPTIONS = [
+export const TELEPORT_OPTIONS: Location[] = [
     {
         name: 'Girlfriends',
         locations: GIRLFRIENDS_LOCATIONS,

@@ -1,14 +1,19 @@
-/// <reference path='../../.config/sa.d.ts' />
 import { KeyCode } from '../../.config/enums';
 import { getPos, teleport } from '../functions/index';
 
-import { TELEPORT_OPTIONS } from '../data/index';
-
 import { PlayerTab } from './tab';
+import { Location, MenuChar, MenuPlayer } from '../models';
 
 export class TeleportTab extends PlayerTab {
     private savedPosition: Vector3;
     private lastPosition: Vector3;
+
+    constructor(
+        player: MenuPlayer,
+        playerChar: MenuChar,
+        private readonly teleportOptions: Location[]) {
+        super(player, playerChar);
+    }
 
     renderTabUI() {
         ImGui.Text(`Keyboard shortcuts:`);
@@ -18,7 +23,7 @@ export class TeleportTab extends PlayerTab {
 
         ImGui.Separator();
 
-        TELEPORT_OPTIONS.forEach((teleportOption) => {
+        this.teleportOptions.forEach((teleportOption) => {
             if (ImGui.CollapsingHeader(teleportOption.name)) {
                 teleportOption.locations.forEach((vector) => {
                     if (ImGui.Selectable(vector.name, false)) {

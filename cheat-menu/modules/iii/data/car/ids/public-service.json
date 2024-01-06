@@ -1,0 +1,54 @@
+[
+  {
+    "id": 106,
+    "name": "Ambulance"
+  },
+  {
+    "id": 123,
+    "name": "Barracks OL"
+  },
+  {
+    "id": 117,
+    "name": "Enforcer"
+  },
+  {
+    "id": 107,
+    "name": "Fbi Car"
+  },
+  {
+    "id": 97,
+    "name": "Firetruck"
+  },
+  {
+    "id": 116,
+    "name": "Police"
+  },
+  {
+    "id": 122,
+    "name": "Rhino"
+  },
+  {
+    "id": 148,
+    "name": "Borgnine"
+  },
+  {
+    "id": 121,
+    "name": "Bus"
+  },
+  {
+    "id": 128,
+    "name": "Cabbie"
+  },
+  {
+    "id": 127,
+    "name": "Coach"
+  },
+  {
+    "id": 110,
+    "name": "Taxi"
+  },
+  {
+    "id": 98,
+    "name": "Trashmaster"
+  }
+]

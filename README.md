@@ -53,8 +53,10 @@ Thanks to:
 
 ### Known Bugs
 
+* After alt-tab, the menu is no longer visible
 * Car hydraulics mod cannot be removed, but this may be inherent to how the game works.
 * Car colors may not apply correctly; unfortunately, I couldn't find a reliable source defining supported car color IDs.
+* Teleports in GTA Vice City sometimes freeze script; simply reload with Ctrl + Space + R
 
 ## Contributing
 

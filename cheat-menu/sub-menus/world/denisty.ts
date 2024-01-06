@@ -1,4 +1,3 @@
-/// <reference path='../../../.config/sa.d.ts' />
 const DENSITY = {
     min: 0,
     max: 2,

@@ -1,8 +1,5 @@
 /// <reference path='../../../.config/sa.d.ts' />
-import { CarOption } from '../../models';
-
-import CAR_LIST from '../../data/car/ids/all.json';
-import { CAR_CATEGORIES } from '../../data/index';
+import { CarCategory, CarOption } from '../../models';
 
 const MAX_CACHED_SEARCHES = 5;
 const searchCache: { [key: string]: CarOption[] } = {};
@@ -19,13 +16,13 @@ const addSearchToCache = (key: string, value: CarOption[]) => {
     }
 }
 
-const renderCarListByName = (searchCarName: string) => {
+const renderCarListByName = (allCars: CarOption[], searchCarName: string) => {
     let carList: CarOption[];
 
     if (searchCache[searchCarName]) {
         carList = searchCache[searchCarName];
     } else {
-        carList = CAR_LIST.filter(({ name }) => name.toLowerCase().includes(searchCarName));
+        carList = allCars.filter(({ name }) => name.toLowerCase().includes(searchCarName));
         addSearchToCache(searchCarName, carList);
         log(searchCache);
     }
@@ -37,8 +34,8 @@ const renderCarListByName = (searchCarName: string) => {
     }
 }
 
-const renderCarListByCategories = () => {
-    for (const category of CAR_CATEGORIES) {
+const renderCarListByCategories = (carCategories: CarCategory[]) => {
+    for (const category of carCategories) {
         if (!ImGui.CollapsingHeader(category.name)) {
             continue;
         }
@@ -51,12 +48,12 @@ const renderCarListByCategories = () => {
     }
 }
 
-export const renderCarList = (): number | undefined => {
+export const renderCarList = (carList: CarOption[], carCategories: CarCategory[]): number | undefined => {
     const searchName = ImGui.InputText('Search car').trim().toLowerCase();
 
     if (searchName) {
-        return renderCarListByName(searchName);
+        return renderCarListByName(carList, searchName);
     }
 
-    return renderCarListByCategories();
+    return renderCarListByCategories(carCategories);
 }

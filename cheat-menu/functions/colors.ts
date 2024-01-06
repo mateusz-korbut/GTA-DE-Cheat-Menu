@@ -1,11 +1,10 @@
 import { Color, ImGuiColor } from '../models/index';
 
-import CAR_COLORS from '../data/car/colors.json';
-
 export const findNearestCarColors = (
+    carColors: Color[],
     { red, green, blue }: ImGuiColor,
     getNumberOfColors: number = 10
-): Color[] => CAR_COLORS.map(({ id, r, g, b, name }) => [
+): Color[] => carColors.map(({ id, r, g, b, name }) => [
     { id, r, g, b, name },
     Math.sqrt((
             ((red / 255) - r)) ** 2 +

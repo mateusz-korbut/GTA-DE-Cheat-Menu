@@ -1,16 +1,17 @@
-/// <reference path='../../../.config/sa.d.ts' />
-import { CarOption } from '../../models/index';
+/// <reference path='../../../../.config/sa.d.ts' />
+import { CarOption } from '../../../models/index';
+import { SaCar } from '../models/index';
 
-import { MOD_REMOVED } from '../../data/index';
+import { MOD_REMOVED } from '../data/index';
 
 export class CarPaintJobMenu {
     private paintJobs!: CarOption[];
 
-    constructor(car: Car | undefined) {
+    constructor(car: SaCar | undefined) {
         this.paintJobs = this.getPaintJobs(car);
     }
 
-    renderPaintJobList(car: Car) {
+    renderPaintJobList(car: SaCar) {
         if (!this.paintJobs.length || !ImGui.CollapsingHeader('Paint jobs')) {
             return;
         }
@@ -29,7 +30,7 @@ export class CarPaintJobMenu {
         car.givePaintjob(newPaintJobId);
     }
 
-    private getPaintJobs(car: Car | undefined): CarOption[] {
+    private getPaintJobs(car: SaCar | undefined): CarOption[] {
         const paintJobs: CarOption[] = [];
         const availablePaintJobs = car?.getNumAvailablePaintjobs();
 

@@ -1,11 +1,17 @@
-/// <reference path='../../../.config/sa.d.ts' />
-import { ModSlot } from '../../../.config/enums';
-import { ButtonConfig, CarAvailableMods, CarOption } from '../../models/index';
-import { loadModel } from '../../functions/index';
+/// <reference path='../../../../.config/sa.d.ts' />
+import { ModSlot } from '../../../../.config/enums';
+import { ButtonConfig, CarOption } from '../../../models/index';
+import { SaCar } from '../models/index';
+import { loadModel } from '../../../functions/index';
 
-import { MOD_REMOVED, NOT_REMOVABLE_MODS, WARN_COLOR } from '../../data/index';
-import CAR_SUPPORTED_MODS from '../../data/car/supported-mods.json';
-import CAR_MODS from '../../data/car/mods.json';
+import CAR_SUPPORTED_MODS from '../data/car/supported-mods.json';
+import CAR_MODS from '../data/car/mods.json';
+import { WARN_COLOR } from '../../../data/index';
+import { MOD_REMOVED, NOT_REMOVABLE_MODS } from '../data/index';
+
+export interface CarAvailableMods {
+    [modSlot: string]: CarOption[];
+}
 
 export class CarModMenu {
     private mods!: CarAvailableMods;
@@ -18,7 +24,7 @@ export class CarModMenu {
         this.mods = this.getCarSupportedMods(carId);
     }
 
-    renderCarModList(car: Car, buttonConfig: ButtonConfig) {
+    renderCarModList(car: SaCar, buttonConfig: ButtonConfig) {
         if (!this.modsAvailable || !ImGui.CollapsingHeader('Mods')) {
             return;
         }
@@ -35,7 +41,7 @@ export class CarModMenu {
     }
 
     private renderNotRemovableModMenu(
-        car: Car,
+        car: SaCar,
         partName: string,
         mods: CarOption[],
         currentModId: number,
@@ -49,12 +55,12 @@ export class CarModMenu {
 
         if (ImGui.Button(`Add ${ partName }`, buttonConfig.width, buttonConfig.height)) {
             const modId = mods[0].id;
-            this.addMod(car, modId);
+            car.addMod(modId);
         }
     }
 
     private renderModMenu(
-        car: Car,
+        car: SaCar,
         partName: string,
         mods: CarOption[],
         currentModId: number,
@@ -77,7 +83,7 @@ export class CarModMenu {
         this.addMod(car, newModId);
     }
 
-    private addMod(car: Car, modId: number) {
+    private addMod(car: SaCar, modId: number) {
         loadModel(modId);
         car.addMod(modId);
     }

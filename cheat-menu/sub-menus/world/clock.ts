@@ -1,5 +1,3 @@
-/// <reference path='../../../.config/sa.d.ts' />
-
 export const renderClockMenu = () => {
     const now = Clock.GetTimeOfDay();
     const hour = ImGui.SliderInt('Hour', now.hours, 0, 24);

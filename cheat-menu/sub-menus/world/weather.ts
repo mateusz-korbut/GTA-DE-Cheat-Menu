@@ -1,15 +1,17 @@
-import { WeatherType } from '../../../.config/enums';
-
 const RANDOM_WEATHER_ID = -1;
 
 export type WeatherId = number | null;
 
-export const renderWeatherList = (weatherType: number): WeatherId => {
-    const weatherTypes: [string, number][] = [['Random', RANDOM_WEATHER_ID],...Object.entries(WeatherType)];
-    const [, newWeatherId] = weatherTypes[ImGui.ComboBox(
+export type WeatherType = {
+    [name: string]: number;
+}
+
+export const renderWeatherList = (weatherTypes: WeatherType, weatherId: number): WeatherId => {
+    const weatherTypeList: [string, number][] = [['Random', RANDOM_WEATHER_ID], ...Object.entries(weatherTypes)];
+    const [, newWeatherId] = weatherTypeList[ImGui.ComboBox(
         'Weather',
-        weatherTypes.map(([name]) => name).join(','),
-        weatherType + 1,
+        weatherTypeList.map(([name]) => name).join(','),
+        weatherId + 1,
     )];
 
     if (newWeatherId === RANDOM_WEATHER_ID) {

@@ -1,41 +1,46 @@
-/// <reference path='../../.config/sa.d.ts' />
-import { CarLock } from '../../.config/enums';
-import { ButtonConfig } from '../models/index';
-import {
-    addBlipTo,
-    loadModel,
-    getPositionInFrontOfChar,
-    getCurrentCar,
-    makeCarInvincible,
-} from '../functions/index';
+import { ButtonConfig, CarCategory, CarOption, Color, MenuCar, MenuChar, MenuPlayer } from '../models/index';
+import { IIICar } from '../modules/iii/models';
+import { loadModel } from '../functions/index';
 
-import { CarColorMenu, CarModMenu, CarPaintJobMenu, renderCarList } from '../sub-menus/index';
+import { CarColorMenu, renderCarList } from '../sub-menus/index';
 import { PlayerTab } from './tab';
 
-const MOD_BUTTON_SIZE: ButtonConfig = {
-    width: 200,
-    height: 45,
-};
+export abstract class CarTab extends PlayerTab {
+    protected playerPos!: Vector3;
+    protected currentCarInvincible = false;
+    protected lastSpawnedCar?: MenuCar;
+    protected currentCarId?: number;
+    protected currentCar?: MenuCar;
 
-export class CarTab extends PlayerTab {
-    private playerPos!: Vector3;
-    private currentCarInvincible = false;
-    private lastSpawnedCar?: Car;
-    private currentCarId?: number;
-    private currentCar?: Car;
+    protected carColorMenu?: CarColorMenu;
 
-    private carModMenu?: CarModMenu;
-    private carColorMenu?: CarColorMenu;
-    private carPaintJobMenu?: CarPaintJobMenu;
+    protected readonly MOD_BUTTON_SIZE: ButtonConfig = {
+        width: 200,
+        height: 45,
+    };
+
+    constructor(
+        player: MenuPlayer,
+        char: MenuChar,
+        private readonly carList: CarOption[],
+        private readonly carCategories: CarCategory[],
+        private readonly carColors: Color[],
+    ) {
+        super(player, char);
+    }
+
+    protected abstract renderMainActions(): void;
+
+    protected abstract createCar(modelId: number): MenuCar;
 
     renderTabUI() {
-        this.playerPos = getPositionInFrontOfChar(this.playerChar);
-        this.currentCar = getCurrentCar(this.playerChar);
+        this.playerPos = this.playerChar.getPositionInFrontOfChar();
+        this.currentCar = this.playerChar.getCurrentCar();
 
         this.renderMainActions();
 
         if (ImGui.CollapsingHeader('Car Spawner')) {
-            const carId = renderCarList();
+            const carId = renderCarList(this.carList, this.carCategories);
 
             if (carId) {
                 this.spawnCar(carId);
@@ -54,69 +59,49 @@ export class CarTab extends PlayerTab {
     updateGameState() {
     }
 
-    private renderMainActions() {
-        if (ImGui.Button('Spawn Jetpack', MOD_BUTTON_SIZE.width, MOD_BUTTON_SIZE.height)) {
-            showTextBox('Jetpack spawned');
-            const pickup = Pickup.Create(370, 4, this.playerPos.x, this.playerPos.y, this.playerPos.z);
+    protected spawnCar(modelId: number) {
+        loadModel(modelId);
 
-            addBlipTo(pickup);
-        }
+        this.lastSpawnedCar?.delete();
+
+        this.currentCar = this.createCar(modelId);
+        this.currentCar.unlockDoors()
+            .makeInvincible()
+            .markAsNoLongerNeeded();
+        this.currentCarInvincible = true;
+        this.lastSpawnedCar = this.currentCar;
+
+        Streaming.MarkModelAsNoLongerNeeded(modelId);
     }
 
-    private renderCurrentCarActions(car: Car) {
+    protected renderCurrentCarActions(car: MenuCar) {
         const carId = car.getModel();
-        this.initializeCache(carId);
+        if (this.currentCarId !== carId) {
+            this.initializeCache(carId);
+        }
 
-        if (ImGui.Button('Repair', MOD_BUTTON_SIZE.width, MOD_BUTTON_SIZE.height)) {
+        if (ImGui.Button('Repair', this.MOD_BUTTON_SIZE.width, this.MOD_BUTTON_SIZE.height)) {
             showTextBox('Car Repaired');
             car.fix();
         }
 
         this.currentCarInvincible = ImGui.Checkbox('Invincible', this.currentCarInvincible);
         if (this.currentCarInvincible) {
-            makeCarInvincible(car);
+            car.makeInvincible();
         }
 
-        this.carModMenu.renderCarModList(car, MOD_BUTTON_SIZE);
-        this.carPaintJobMenu.renderPaintJobList(car);
-        this.carColorMenu.renderCarColorPickers(car);
-
+        this.carColorMenu?.renderCarColorPickers(car);
     }
 
-    private spawnCar(modelId: number) {
-        loadModel(modelId);
-
-        this.lastSpawnedCar?.delete();
-
-        this.currentCar = makeCarInvincible(
-            Car.Create(modelId, this.playerPos.x, this.playerPos.y, this.playerPos.z)
-                .lockDoors(CarLock.NotUsed)
-                .markAsNoLongerNeeded(),
-        );
-        this.currentCarInvincible = true;
-        this.lastSpawnedCar = this.currentCar;
-
-        Streaming.MarkModelAsNoLongerNeeded(modelId);
-        addBlipTo(this.currentCar);
-    }
-
-    private initializeCache(carId: number) {
-        if (this.currentCarId === carId) {
-            return;
-        }
-
+    protected initializeCache(carId: number) {
         this.currentCarInvincible = false;
         this.currentCarId = carId;
-        this.carModMenu = new CarModMenu(carId);
-        this.carColorMenu = new CarColorMenu();
-        this.carPaintJobMenu = new CarPaintJobMenu(this.currentCar);
+        this.carColorMenu = new CarColorMenu(this.carColors);
     }
 
-    private clearCache() {
+    protected clearCache() {
         this.currentCarInvincible = false;
         this.currentCarId = null;
-        this.carModMenu = null;
         this.carColorMenu = null;
-        this.carPaintJobMenu = null;
     }
 }

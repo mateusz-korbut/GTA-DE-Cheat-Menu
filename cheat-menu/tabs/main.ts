@@ -1,5 +1,3 @@
-/// <reference path='../../.config/sa.d.ts' />
-import { infiniteAmmo } from '../functions/index';
 import { renderMainActions, renderMoneySlider, MainOptions, renderWantedLevelSlider } from '../sub-menus/index';
 
 import { MAX_HEALTH } from '../data/index';
@@ -28,7 +26,7 @@ export class MainTab extends PlayerTab {
         }
 
         if (this.mainOptions.isInfiniteAmmoChecked) {
-            infiniteAmmo(this.playerChar);
+            this.playerChar.addAmmo();
         }
 
         if (this.mainOptions.isWantedLevelFrozen) {

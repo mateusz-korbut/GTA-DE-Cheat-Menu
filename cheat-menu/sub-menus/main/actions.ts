@@ -1,6 +1,4 @@
-/// <reference path='../../../.config/sa.d.ts' />
-import { ButtonConfig } from '../../models/index';
-import { infiniteAmmo } from '../../functions/index';
+import { ButtonConfig, MenuChar, MenuPlayer } from '../../models/index';
 
 const MONEY_LIMIT = 99999999;
 const INCREASE_HEALTH_BY = 100;
@@ -9,12 +7,10 @@ const WANTED_LEVEL = {
     max: 6,
 };
 
-export const renderMainActions = (char: Char, buttonConfig: ButtonConfig) => {
+export const renderMainActions = (char: MenuChar, buttonConfig: ButtonConfig) => {
     if (ImGui.Button('Add Health', buttonConfig.width, buttonConfig.height)) {
         showTextBox('Health added');
-        char.setHealth(
-            char.getHealth() + INCREASE_HEALTH_BY
-        );
+        char.addHealth(INCREASE_HEALTH_BY);
     }
 
     ImGui.SameLine();
@@ -26,11 +22,11 @@ export const renderMainActions = (char: Char, buttonConfig: ButtonConfig) => {
     ImGui.SameLine();
     if (ImGui.Button('Add Ammo', buttonConfig.width, buttonConfig.height)) {
         showTextBox('Ammo added');
-        infiniteAmmo(char);
+        char.addAmmo();
     }
 }
 
-export const renderWantedLevelSlider = (player: Player, wantedLevel: number): number => {
+export const renderWantedLevelSlider = (player: MenuPlayer, wantedLevel: number): number => {
     const newWantedLevel = ImGui.SliderInt('Wanted Level', wantedLevel, WANTED_LEVEL.min, WANTED_LEVEL.max);
 
     if (wantedLevel !== newWantedLevel) {
@@ -40,12 +36,12 @@ export const renderWantedLevelSlider = (player: Player, wantedLevel: number): nu
     return newWantedLevel;
 }
 
-export const renderMoneySlider = (player: Player) => {
+export const renderMoneySlider = (player: MenuPlayer) => {
     const moneyInput = ImGui.InputInt('Money', 0, -MONEY_LIMIT, MONEY_LIMIT);
     const isSubtracting = moneyInput < 0;
 
     if (ImGui.Button(`${ isSubtracting ? 'Subtract' : 'Add' } Money`, 200, 60) && moneyInput) {
         showTextBox(`Money ${ isSubtracting ? 'subtracted' : 'added' }`);
-        player.addScore(moneyInput);
+        player.addMoney(moneyInput);
     }
 }

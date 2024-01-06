@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Ocean View Hotel",
+    "x": 240,
+    "y": -1279,
+    "z": 11
+  },
+  {
+    "name": "Vercetti Estate",
+    "x": -378,
+    "y": -536,
+    "z": 17
+  },
+  {
+    "name": "Ocean Heights Apartment",
+    "x": 3,
+    "y": -1498,
+    "z": 10
+  },
+  {
+    "name": "1102 Washington Street",
+    "x": 94,
+    "y": -808,
+    "z": 10
+  },
+  {
+    "name": "Links View Apartment",
+    "x": 311,
+    "y": 377,
+    "z": 13
+  },
+  {
+    "name": "El Swanko Casa",
+    "x": 428,
+    "y": 609,
+    "z": 13
+  },
+  {
+    "name": "3321 Vice Point",
+    "x": 527,
+    "y": 1270,
+    "z": 16
+  },
+  {
+    "name": "Hyman Condo",
+    "x": -835, "y": 1299, "z": 12
+  },
+  {
+    "name": "Skumole Shack",
+    "x": -560, "y": 705, "z": 20
+  }
+]

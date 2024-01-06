@@ -1,0 +1,430 @@
+[
+  {
+    "id": 130,
+    "name": "Landstalker"
+  },
+  {
+    "id": 131,
+    "name": "Idaho"
+  },
+  {
+    "id": 132,
+    "name": "Stinger"
+  },
+  {
+    "id": 133,
+    "name": "Linerunner"
+  },
+  {
+    "id": 134,
+    "name": "Perennial"
+  },
+  {
+    "id": 135,
+    "name": "Sentinel"
+  },
+  {
+    "id": 136,
+    "name": "Rio"
+  },
+  {
+    "id": 137,
+    "name": "Fire Truck"
+  },
+  {
+    "id": 138,
+    "name": "Trashmaster"
+  },
+  {
+    "id": 139,
+    "name": "Stretch"
+  },
+  {
+    "id": 140,
+    "name": "Manana"
+  },
+  {
+    "id": 141,
+    "name": "Infernus"
+  },
+  {
+    "id": 142,
+    "name": "Voodoo"
+  },
+  {
+    "id": 143,
+    "name": "Pony"
+  },
+  {
+    "id": 144,
+    "name": "Mule"
+  },
+  {
+    "id": 145,
+    "name": "Cheetah"
+  },
+  {
+    "id": 146,
+    "name": "Ambulance"
+  },
+  {
+    "id": 147,
+    "name": "FBI Washington"
+  },
+  {
+    "id": 148,
+    "name": "Moonbeam"
+  },
+  {
+    "id": 149,
+    "name": "Esperanto"
+  },
+  {
+    "id": 150,
+    "name": "Taxi"
+  },
+  {
+    "id": 151,
+    "name": "Washington"
+  },
+  {
+    "id": 152,
+    "name": "Bobcat"
+  },
+  {
+    "id": 153,
+    "name": "Mr Whoopee"
+  },
+  {
+    "id": 154,
+    "name": "BF Injection"
+  },
+  {
+    "id": 155,
+    "name": "Hunter"
+  },
+  {
+    "id": 156,
+    "name": "Police"
+  },
+  {
+    "id": 157,
+    "name": "Enforcer"
+  },
+  {
+    "id": 158,
+    "name": "Securicar"
+  },
+  {
+    "id": 159,
+    "name": "Banshee"
+  },
+  {
+    "id": 160,
+    "name": "Predator"
+  },
+  {
+    "id": 161,
+    "name": "Bus"
+  },
+  {
+    "id": 162,
+    "name": "Rhino"
+  },
+  {
+    "id": 163,
+    "name": "Barracks OL"
+  },
+  {
+    "id": 164,
+    "name": "Cuban Hermes"
+  },
+  {
+    "id": 165,
+    "name": "Helicopter"
+  },
+  {
+    "id": 166,
+    "name": "Angel"
+  },
+  {
+    "id": 167,
+    "name": "Coach"
+  },
+  {
+    "id": 168,
+    "name": "Cabbie"
+  },
+  {
+    "id": 169,
+    "name": "Stallion"
+  },
+  {
+    "id": 170,
+    "name": "Rumpo"
+  },
+  {
+    "id": 171,
+    "name": "RC Bandit"
+  },
+  {
+    "id": 172,
+    "name": "Romero's Hearse"
+  },
+  {
+    "id": 173,
+    "name": "Packer"
+  },
+  {
+    "id": 174,
+    "name": "Sentinel XS"
+  },
+  {
+    "id": 175,
+    "name": "Admiral"
+  },
+  {
+    "id": 176,
+    "name": "Squalo"
+  },
+  {
+    "id": 177,
+    "name": "Sea Sparrow"
+  },
+  {
+    "id": 178,
+    "name": "Pizza Boy"
+  },
+  {
+    "id": 179,
+    "name": "Gang Burrito"
+  },
+  {
+    "id": 180,
+    "name": ""
+  },
+  {
+    "id": 181,
+    "name": "Dodo"
+  },
+  {
+    "id": 182,
+    "name": "Speeder"
+  },
+  {
+    "id": 183,
+    "name": "Reefer"
+  },
+  {
+    "id": 184,
+    "name": "Tropic"
+  },
+  {
+    "id": 185,
+    "name": "Flatbed"
+  },
+  {
+    "id": 186,
+    "name": "Yankee"
+  },
+  {
+    "id": 187,
+    "name": "Caddy"
+  },
+  {
+    "id": 188,
+    "name": "Zebra Cab"
+  },
+  {
+    "id": 189,
+    "name": "Top Fun"
+  },
+  {
+    "id": 190,
+    "name": "Skimmer"
+  },
+  {
+    "id": 191,
+    "name": "PCJ 600"
+  },
+  {
+    "id": 192,
+    "name": "Faggio"
+  },
+  {
+    "id": 193,
+    "name": "Freeway"
+  },
+  {
+    "id": 194,
+    "name": "RC Baron"
+  },
+  {
+    "id": 195,
+    "name": "RC Raider"
+  },
+  {
+    "id": 196,
+    "name": "Glendale"
+  },
+  {
+    "id": 197,
+    "name": "Oceanic"
+  },
+  {
+    "id": 198,
+    "name": "Sanchez"
+  },
+  {
+    "id": 199,
+    "name": "Sparrow"
+  },
+  {
+    "id": 200,
+    "name": "Patriot"
+  },
+  {
+    "id": 201,
+    "name": "Love Fist"
+  },
+  {
+    "id": 202,
+    "name": "Coast Guard"
+  },
+  {
+    "id": 203,
+    "name": "Dinghy"
+  },
+  {
+    "id": 204,
+    "name": "Hermes"
+  },
+  {
+    "id": 205,
+    "name": "Sabre"
+  },
+  {
+    "id": 206,
+    "name": "Sabre Turbo"
+  },
+  {
+    "id": 207,
+    "name": "Phoenix"
+  },
+  {
+    "id": 208,
+    "name": "Walton"
+  },
+  {
+    "id": 209,
+    "name": "Regina"
+  },
+  {
+    "id": 210,
+    "name": "Comet"
+  },
+  {
+    "id": 211,
+    "name": "Deluxo"
+  },
+  {
+    "id": 212,
+    "name": "Burrito"
+  },
+  {
+    "id": 213,
+    "name": "Spand Express"
+  },
+  {
+    "id": 214,
+    "name": "Marquis"
+  },
+  {
+    "id": 215,
+    "name": "Baggage Handler"
+  },
+  {
+    "id": 216,
+    "name": "Kaufman Cab"
+  },
+  {
+    "id": 217,
+    "name": "Maverick"
+  },
+  {
+    "id": 218,
+    "name": "VCN Maverick"
+  },
+  {
+    "id": 219,
+    "name": "Rancher"
+  },
+  {
+    "id": 220,
+    "name": "FBI Rancher"
+  },
+  {
+    "id": 221,
+    "name": "Virgo"
+  },
+  {
+    "id": 222,
+    "name": "Greenwood"
+  },
+  {
+    "id": 223,
+    "name": "Cuban Jetmax"
+  },
+  {
+    "id": 224,
+    "name": "Hotring Racer"
+  },
+  {
+    "id": 225,
+    "name": "Sandking"
+  },
+  {
+    "id": 226,
+    "name": "Blista Compact"
+  },
+  {
+    "id": 227,
+    "name": "Police Maverick"
+  },
+  {
+    "id": 228,
+    "name": "Boxville"
+  },
+  {
+    "id": 229,
+    "name": "Benson"
+  },
+  {
+    "id": 230,
+    "name": "Mesa Grande"
+  },
+  {
+    "id": 231,
+    "name": ""
+  },
+  {
+    "id": 232,
+    "name": "Hotring Racer"
+  },
+  {
+    "id": 233,
+    "name": "Hotring Racer"
+  },
+  {
+    "id": 234,
+    "name": "Bloodring Banger"
+  },
+  {
+    "id": 235,
+    "name": "Bloodring Banger"
+  },
+  {
+    "id": 236,
+    "name": "VCPD Cheetah"
+  }
+]

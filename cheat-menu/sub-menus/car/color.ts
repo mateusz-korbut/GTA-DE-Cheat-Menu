@@ -1,5 +1,4 @@
-/// <reference path='../../../.config/sa.d.ts' />
-import { Color } from '../../models/index';
+import { Color, MenuCar } from '../../models/index';
 import { findNearestCarColors } from '../../functions/index';
 
 import { WARN_COLOR } from '../../data/index';
@@ -16,7 +15,10 @@ export class CarColorMenu {
     private primaryColor?: ColorCache;
     private secondaryColor?: ColorCache;
 
-    renderCarColorPickers(car: Car) {
+    constructor(private readonly colors: Color[]) {
+    }
+
+    renderCarColorPickers(car: MenuCar) {
         if (!ImGui.CollapsingHeader('Colors')) {
             return;
         }
@@ -47,7 +49,7 @@ export class CarColorMenu {
         if (colorChanged) {
             colorCached = {
                 ...color,
-                colors: findNearestCarColors(color),
+                colors: findNearestCarColors(this.colors, color),
             };
         }
 
