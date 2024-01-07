@@ -29,13 +29,13 @@ export class VcChar extends MenuChar {
     }
 
     addAmmo() {
-        this.char.setAmmo(WeaponType.Pistol, INFINITE_WEAPON_AMMO)
-            .setAmmo(WeaponType.Shotgun, INFINITE_WEAPON_AMMO)
-            .setAmmo(WeaponType.Mp5, INFINITE_WEAPON_AMMO)
-            .setAmmo(WeaponType.M4, INFINITE_WEAPON_AMMO)
-            .setAmmo(WeaponType.Sniper, INFINITE_WEAPON_AMMO)
-            .setAmmo(WeaponType.RocketLauncher, INFINITE_WEAPON_AMMO)
-            .setAmmo(WeaponType.Grenade, INFINITE_WEAPON_AMMO);
+        this.char.addAmmo(WeaponType.Pistol, INFINITE_WEAPON_AMMO)
+            .addAmmo(WeaponType.Shotgun, INFINITE_WEAPON_AMMO)
+            .addAmmo(WeaponType.Mp5, INFINITE_WEAPON_AMMO)
+            .addAmmo(WeaponType.M4, INFINITE_WEAPON_AMMO)
+            .addAmmo(WeaponType.Sniper, INFINITE_WEAPON_AMMO)
+            .addAmmo(WeaponType.RocketLauncher, INFINITE_WEAPON_AMMO)
+            .addAmmo(WeaponType.Grenade, INFINITE_WEAPON_AMMO);
 
         return this;
     }
