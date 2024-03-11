@@ -1,14 +1,16 @@
 import { KeyCode, ImGuiCond } from '../.config/enums';
 import { Events } from './data/index';
+import { CONFIG_PATH } from './index';
 
 import { Tab } from './tabs/tab';
 
 type Tabs = { name: string, tab: Tab }[];
 
 const USER_INPUT_DELAY = 250;
+const CONFIG_SECTION = 'GUI';
 const GUI_CONFIG = {
-    width: 720,
-    height: 1280,
+    width: IniFile.ReadInt(CONFIG_PATH, CONFIG_SECTION, 'WIDTH') ?? 720,
+    height: IniFile.ReadInt( CONFIG_PATH, CONFIG_SECTION, 'HEIGHT') ?? 1280,
     noTitleBar: false,
     noResize: false,
     noMove: false,

@@ -1,12 +1,15 @@
 import { KeyCode } from '../../../../.config/enums';
+import { getBoolean } from '../../../functions/index';
+import { CONFIG_PATH } from '../../../index';
 import { CheatsTab } from '../../../tabs/index';
 import { MenuCar } from '../../../models';
 
-const SPEED_MULTIPLIER = 1.5;
+const SECTION = 'CHEATS';
+const SPEED_MULTIPLIER = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'SPEED_MULTIPLIER');
 
 export class VcCheatsTab extends CheatsTab {
-    private speedUpCarActive = true;
-    private stopCarActive = true;
+    private speedUpCarActive = getBoolean(SECTION, 'SPEED_CAR_ACTIVE');
+    private stopCarActive = getBoolean(SECTION, 'STOP_CAR_ACTIVE');
 
     renderTabUI() {
         super.renderTabUI();

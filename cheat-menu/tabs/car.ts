@@ -1,5 +1,4 @@
 import { ButtonConfig, CarCategory, CarOption, Color, MenuCar, MenuChar, MenuPlayer } from '../models/index';
-import { IIICar } from '../modules/iii/models';
 import { loadModel } from '../functions/index';
 
 import { CarColorMenu, renderCarList } from '../sub-menus/index';

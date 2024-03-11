@@ -3,3 +3,4 @@
 
 CLEO_PLUGINS/*
 !CLEO_PLUGINS/ImGuiReduxWin64.cleo
+!CLEO_PLUGINS/IniFiles64.cleo

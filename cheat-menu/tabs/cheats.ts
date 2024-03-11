@@ -1,21 +1,41 @@
 import { KeyCode } from '../../.config/enums';
+import { getBoolean, saveBoolean } from '../functions/index';
 import { MenuCar } from '../models/index';
 
 import { MAX_HEALTH } from '../data/index';
 
 import { PlayerTab } from './tab';
 
+const SECTION = 'CHEATS';
+
 export class CheatsTab extends PlayerTab {
-    private clearWantedLevelActive = true;
-    private flipCarActive = true;
-    private addHealthActive = true;
-    private saveGameActive = true;
+    private addHealthActive = getBoolean(SECTION, 'ADD_HEALTH_ACTIVE');
+    private clearWantedLevelActive = getBoolean(SECTION, 'CLEAR_WANTED_LEVEL_ACTIVE');
+    private flipCarActive = getBoolean(SECTION, 'FLIP_CAR_ACTIVE');
+    private saveGameActive = getBoolean(SECTION, 'SAVE_GAME_ACTIVE');
 
     renderTabUI() {
-        this.addHealthActive = ImGui.Checkbox('F2 - Add health / Fix car', this.addHealthActive);
-        this.clearWantedLevelActive = ImGui.Checkbox('F3 - Clear wanted level', this.clearWantedLevelActive);
-        this.flipCarActive = ImGui.Checkbox('F4 - Fip car', this.flipCarActive);
-        this.saveGameActive = ImGui.Checkbox('F5 - Save game', this.saveGameActive);
+        const addHealthActive = ImGui.Checkbox('F2 - Add health / Fix car', this.addHealthActive);
+        const clearWantedLevelActive = ImGui.Checkbox('F3 - Clear wanted level', this.clearWantedLevelActive);
+        const flipCarActive = ImGui.Checkbox('F4 - Fip car', this.flipCarActive);
+        const saveGameActive = ImGui.Checkbox('F5 - Save game', this.saveGameActive);
+
+        if (this.addHealthActive !== addHealthActive) {
+            this.addHealthActive = addHealthActive;
+            saveBoolean(SECTION, 'ADD_HEALTH_ACTIVE', addHealthActive);
+        }
+        if (this.clearWantedLevelActive !== clearWantedLevelActive) {
+            this.clearWantedLevelActive = clearWantedLevelActive;
+            saveBoolean(SECTION, 'CLEAR_WANTED_LEVEL_ACTIVE', clearWantedLevelActive);
+        }
+        if (this.flipCarActive !== flipCarActive) {
+            this.flipCarActive = flipCarActive;
+            saveBoolean(SECTION, 'FLIP_CAR_ACTIVE', flipCarActive);
+        }
+        if (this.saveGameActive !== saveGameActive) {
+            this.saveGameActive = saveGameActive;
+            saveBoolean(SECTION, 'SAVE_GAME_ACTIVE', saveGameActive);
+        }
     }
 
     updateGameState() {

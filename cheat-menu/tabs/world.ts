@@ -1,4 +1,3 @@
-/// <reference path='../../.config/sa.d.ts' />
 import {
     DensitySubMenu,
     renderClockMenu,

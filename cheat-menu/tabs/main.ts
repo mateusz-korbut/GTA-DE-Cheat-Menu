@@ -1,9 +1,11 @@
+import { CONFIG_PATH } from '../index';
 import { renderMainActions, renderMoneySlider, MainOptions, renderWantedLevelSlider } from '../sub-menus/index';
 
 import { MAX_HEALTH } from '../data/index';
 
 import { PlayerTab } from './tab';
 
+const SECTION = 'MAIN';
 const BUTTON_SIZE = {
     width: 150,
     height: 60,
@@ -11,12 +13,17 @@ const BUTTON_SIZE = {
 
 export class MainTab extends PlayerTab {
     private readonly mainOptions = new MainOptions();
-    private wantedLevel = 0;
+    private wantedLevel = IniFile.ReadInt(CONFIG_PATH, SECTION, 'WANTED_LEVEL');
 
     renderTabUI() {
         renderMainActions(this.playerChar, BUTTON_SIZE);
         this.mainOptions.renderMainOptions();
-        this.wantedLevel = renderWantedLevelSlider(this.player, this.wantedLevel);
+
+        const wantedLevel = renderWantedLevelSlider(this.player, this.wantedLevel);
+        if (this.wantedLevel !== wantedLevel) {
+            this.wantedLevel = wantedLevel;
+            IniFile.WriteInt(wantedLevel, CONFIG_PATH, SECTION, 'WANTED_LEVEL');
+        }
         renderMoneySlider(this.player);
     }
 

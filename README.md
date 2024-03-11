@@ -1,9 +1,10 @@
-# GTA SA: Definitive Edition - Cheat Menu mod
+# GTA: Definitive Edition - Cheat Menu mod
 
 ## Installation
 
 1. Install [CLEO Redux](https://re.cleo.li/) version ^1.2.2
-2. Copy mod directory to CLEO library `...\GTA San Andreas - The Definitive Edition\Gameface\Binaries\Win64\CLEO\cheat-menu`
+2. Copy mod directory to CLEO library `...\GTA III/VC/San Andreas - The Definitive Edition\Gameface\Binaries\Win64\CLEO\cheat-menu`
+3. Set the game config to Windowed Fullscreen/Borderless Window
 
 ## Usage
 
