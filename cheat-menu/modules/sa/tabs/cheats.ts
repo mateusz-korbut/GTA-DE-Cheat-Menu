@@ -15,6 +15,12 @@ export class SaCheatsTab extends CheatsTab {
         super.renderTabUI();
         this.speedUpCarActive = ImGui.Checkbox('SHIFT + W - Speed car', this.speedUpCarActive);
         this.stopCarActive = ImGui.Checkbox('SHIFT + S - Stop car', this.stopCarActive);
+
+        if (ImGui.Button('Unlock islands', 200, 60)) {
+            Streaming.RemoveIpl('BARRIERS1');
+            Streaming.RemoveIpl('BARRIERS2');
+            showTextBox('Islands unlocked');
+        }
     }
 
     protected moreCarShortcuts(car: MenuCar) {
