@@ -1,15 +1,25 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
-    "moduleDetection": "force",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true
+    "target": "ES2020",                   
+    "module": "ES2020",                   
+    "moduleDetection": "force",           
+    "moduleResolution": "node",           
+    "resolveJsonModule": true,            
+    "allowSyntheticDefaultImports": true, 
+    "allowJs": true,           
+    "outDir": "dist",                   
+    "rootDir": ".",                   
+    "strict": true,                    
+    "esModuleInterop": true,              
+    "forceConsistentCasingInFileNames": true, 
+    "skipLibCheck": true                  
   },
   "include": [
-    "**/*.ts",
-    ".config/*.d.ts"
+    "**/*.ts"                            
+  ],
+  "exclude": [
+    "node_modules",                       
+    "dist",                               
+    ".config/**/*.js"                   
   ]
 }
