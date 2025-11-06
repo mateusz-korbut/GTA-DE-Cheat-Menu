@@ -1,4 +1,4 @@
-import { CONFIG_PATH } from '../../index';
+import { CONFIG_PATH } from '../../config';
 
 const SECTION = 'WORLD';
 const DENSITY = {

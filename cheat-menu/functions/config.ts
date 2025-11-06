@@ -1,4 +1,4 @@
-import { CONFIG_PATH } from '../index';
+import { CONFIG_PATH } from '../config';
 
 export const getBoolean = (section: string, key: string) =>
     IniFile.ReadString(CONFIG_PATH, section, key) === 'TRUE';

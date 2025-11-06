@@ -1,6 +1,6 @@
 import { KeyCode } from '../../../../.config/enums';
 import { getBoolean } from '../../../functions/index';
-import { CONFIG_PATH } from '../../../index';
+import { CONFIG_PATH } from '../../../config';
 import { CheatsTab } from '../../../tabs/index';
 import { MenuCar } from '../../../models';
 

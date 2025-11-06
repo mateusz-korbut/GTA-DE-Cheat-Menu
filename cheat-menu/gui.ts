@@ -1,6 +1,6 @@
 import { KeyCode, ImGuiCond } from '../.config/enums';
 import { Events } from './data/index';
-import { CONFIG_PATH } from './index';
+import { CONFIG_PATH } from './config';
 
 import { Tab } from './tabs/tab';
 

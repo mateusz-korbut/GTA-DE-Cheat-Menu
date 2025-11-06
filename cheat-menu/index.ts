@@ -1,4 +1,3 @@
-export const CONFIG_PATH = `${__dirname}/config.ini`;
 
 switch (HOST) {
     case 'gta3_unreal':
