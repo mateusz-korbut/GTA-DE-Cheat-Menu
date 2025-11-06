@@ -21,8 +21,6 @@ const GUI_CONFIG = {
 export const renderGui = (tabs: Tabs) => {
     const tabNames = tabs.map(({ name }) => name).join(',');
 
-    addEventListener(Events.NewCheatMenuCreated, () => exit('CheatMenu script reloaded'));
-
     // FIXME asyncAwait freeze script after a while
     while (true) {
         // @Note without it script is terminated
