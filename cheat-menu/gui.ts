@@ -48,11 +48,11 @@ export const renderGui = (tabs: Tabs) => {
 
             const selectedTab = ImGui.Tabs('TabBar', tabNames);
             tabs[selectedTab]?.tab.renderTabUI();
+            ImGui.End();
         }
 
         tabs.forEach(({ tab }) => tab.updateGameState());
 
-        ImGui.End();
         ImGui.EndFrame();
     }
 }
