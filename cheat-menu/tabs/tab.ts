@@ -3,10 +3,6 @@ import { MenuChar, MenuPlayer } from '../models/index';
 
 export abstract class Tab {
     constructor() {
-        addEventListener(
-            Events.NewGameFrame,
-            () => this.updateGameState(),
-        );
     }
     /*
     * This method is called when the tab is open and is responsible for generating the tab's UI layout

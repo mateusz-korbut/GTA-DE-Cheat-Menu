@@ -1,6 +1,6 @@
 import { KeyCode, ImGuiCond } from '../.config/enums';
 import { Events } from './data/index';
-import { CONFIG_PATH } from './index';
+import { CONFIG_PATH } from './config';
 
 import { Tab } from './tabs/tab';
 
@@ -20,8 +20,6 @@ const GUI_CONFIG = {
 
 export const renderGui = (tabs: Tabs) => {
     const tabNames = tabs.map(({ name }) => name).join(',');
-
-    addEventListener(Events.NewCheatMenuCreated, () => exit('CheatMenu script reloaded'));
 
     // FIXME asyncAwait freeze script after a while
     while (true) {
@@ -50,11 +48,11 @@ export const renderGui = (tabs: Tabs) => {
 
             const selectedTab = ImGui.Tabs('TabBar', tabNames);
             tabs[selectedTab]?.tab.renderTabUI();
+            ImGui.End();
         }
 
         tabs.forEach(({ tab }) => tab.updateGameState());
 
-        ImGui.End();
         ImGui.EndFrame();
     }
 }

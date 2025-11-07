@@ -1,4 +1,4 @@
-import { CONFIG_PATH } from '../index';
+import { CONFIG_PATH } from '../config';
 import { renderMainActions, renderMoneySlider, MainOptions, renderWantedLevelSlider } from '../sub-menus/index';
 
 import { MAX_HEALTH } from '../data/index';
