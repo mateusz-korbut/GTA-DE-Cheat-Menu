@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Install [CLEO Redux](https://re.cleo.li/) version ^1.2.2
+1. Install [CLEO Redux](https://re.cleo.li/) 1.5.0 or newer for the target game.
 2. Copy mod directory to CLEO library `...\GTA III/VC/San Andreas - The Definitive Edition\Gameface\Binaries\Win64\CLEO\cheat-menu`
 3. Set the game config to Windowed Fullscreen/Borderless Window
 
