@@ -20,8 +20,8 @@ Press `F1` key in game to open/close the menu.
 | `Shift + W` / `Shift + S` | Speed up (repeats while held) / stop the car (Vice City, San Andreas) |
 | `Ctrl + S` / `Ctrl + T` / `Ctrl + Z` | Save position / teleport to it / go back to the position before the last teleport |
 | `Ctrl + R` | Save the current position with a name |
-| `F6` | Teleport to the map waypoint (Vice City*) |
-| `F7` | Teleport to the mission destination / target (Vice City*) |
+| `F6` | Teleport to the map waypoint (Vice City, GTA III*) |
+| `F7` | Teleport to the mission destination / target (Vice City, GTA III*) |
 
 `F1`-`F7` and the `Ctrl` shortcuts fire once per key press.
 
@@ -70,7 +70,7 @@ Collectible coordinates were extracted from the game's `main.scm`.
 
 Vice City *Side missions* section *: complete Paramedic, Firefighter, Vigilante and Taxi Driver instantly (same rewards, 100% progress and completion flags as finishing the last level), and set the Cherry Popper ice cream sales to 50 during the ice cream mission.
 
-\* These features read/write game memory at offsets found in **GTA Vice City DE 1.0.113.21181 (Steam)**. On any other build they are switched off automatically (`cleo_redux.log` says which).
+\* These features read/write game memory at offsets found in the **1.0.113.21181 (Steam)** builds of Vice City and GTA III DE (side missions: Vice City only). On any other build they are switched off automatically (`cleo_redux.log` says which).
 
 ## Credits
 
@@ -86,6 +86,8 @@ Thanks to:
 * Car colors may not apply correctly; unfortunately, I couldn't find a reliable source defining supported car color IDs.
 
 ## Contributing
+
+Type-check against the definitions CLEO Redux generates for a game: copy that game's `CLEO\.config` folder next to `tsconfig.json`, then run `npm install` and `npm run typecheck:iii`, `typecheck:vc` or `typecheck:sa`.
 
 Feel free to contribute by reporting issues or creating pull requests.
 
