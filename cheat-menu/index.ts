@@ -7,7 +7,7 @@ switch (HOST) {
         CLEO.runScript('./modules/vc/index[fs][mem].ts');
         break;
     case 'sa_unreal':
-        CLEO.runScript('./modules/sa/index[fs].ts');
+        CLEO.runScript('./modules/sa/index[fs][mem].ts');
         break;
     default:
         exit('Game not supported');

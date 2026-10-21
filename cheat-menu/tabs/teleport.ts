@@ -8,7 +8,8 @@ type LocationPoint = Location['locations'][number];
 const PICKUP_REFRESH_INTERVAL = 2000;
 // the game reports z = 1.0 until it resolves the ground height of a fresh waypoint
 const MIN_KNOWN_WAYPOINT_Z = 1.5;
-const WAYPOINT_DROP_Z = 300;
+// above any roof or mountain (Mount Chiliad is ~530 m)
+const WAYPOINT_DROP_Z = 1000;
 const GROUND_FIX_DELAY = 500;
 const GROUND_FIX_TIMEOUT = 4000;
 const MISSION_TARGETS_REFRESH_INTERVAL = 500;

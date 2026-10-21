@@ -1,17 +1,41 @@
 import { MissionTarget } from '../models/index';
 
-// CRadar::ms_RadarTrace of a DE build: the field layout differs per game, the leading color/type/handle fields don't
+export interface RadarTrace {
+    inUse: boolean;
+    color: number;
+    type: number;
+    handle: number;
+    position: Vector3;
+    display: number;
+    sprite: number;
+}
+
+// CRadar::ms_RadarTrace of a DE build; each game reads its own trace layout
 export interface RadarLayout {
     traceRva: number;
     traceCount: number;
     traceSize: number;
-    positionOffset: number;
-    inUseOffset: number;
-    displayOffset: number;
-    spriteOffset: number;
+    readTrace: (trace: number) => RadarTrace;
     // sprite of the waypoint the player sets on the map
     waypointSprite: number;
+    // SA stores a placeholder height for the waypoint: then the player is put on the ground instead
+    isWaypointHeightKnown: boolean;
 }
+
+// GTA III / Vice City: color, type and handle first, then plain fields at per-game offsets
+export const readPlainTrace = (offsets: { position: number, inUse: number, display: number, sprite: number }) => (trace: number): RadarTrace => ({
+    inUse: Memory.ReadU8(trace + offsets.inUse, false) === 1,
+    color: Memory.ReadU32(trace + 0x00, false),
+    type: Memory.ReadU32(trace + 0x04, false),
+    handle: Memory.ReadU32(trace + 0x08, false),
+    position: {
+        x: Memory.ReadFloat(trace + offsets.position, false),
+        y: Memory.ReadFloat(trace + offsets.position + 4, false),
+        z: Memory.ReadFloat(trace + offsets.position + 8, false),
+    },
+    display: Memory.ReadU16(trace + offsets.display, false),
+    sprite: Memory.ReadU16(trace + offsets.sprite, false),
+});
 
 export enum BlipType {
     Car = 1,
@@ -21,14 +45,7 @@ export enum BlipType {
     ContactPoint = 5,
 }
 
-interface RadarBlip {
-    color: number;
-    type: number;
-    handle: number;
-    position: Vector3;
-    display: number;
-    sprite: number;
-}
+type RadarBlip = Omit<RadarTrace, 'inUse'>;
 
 const MAX_COORDINATE = 5000;
 const COLOR_NAMES = ['Red', 'Green', 'Light blue', 'Gray', 'Yellow', 'Magenta', 'Cyan'];
@@ -41,35 +58,23 @@ const getRadarBlips = (layout: RadarLayout): RadarBlip[] => {
     const blips: RadarBlip[] = [];
 
     for (let i = 0; i < layout.traceCount; i++) {
-        const trace = traces + i * layout.traceSize;
+        const { inUse, ...blip } = layout.readTrace(traces + i * layout.traceSize);
+        const { x, y, z } = blip.position;
 
-        if (Memory.ReadU8(trace + layout.inUseOffset, false) !== 1) {
-            continue;
+        if (inUse && [x, y, z].every((value) => Math.abs(value) < MAX_COORDINATE)) {
+            blips.push(blip);
         }
-        const position = {
-            x: Memory.ReadFloat(trace + layout.positionOffset, false),
-            y: Memory.ReadFloat(trace + layout.positionOffset + 4, false),
-            z: Memory.ReadFloat(trace + layout.positionOffset + 8, false),
-        };
-
-        if (![position.x, position.y, position.z].every((value) => Math.abs(value) < MAX_COORDINATE)) {
-            continue;
-        }
-        blips.push({
-            color: Memory.ReadU32(trace + 0x00, false),
-            type: Memory.ReadU32(trace + 0x04, false),
-            handle: Memory.ReadU32(trace + 0x08, false),
-            position,
-            display: Memory.ReadU16(trace + layout.displayOffset, false),
-            sprite: Memory.ReadU16(trace + layout.spriteOffset, false),
-        });
     }
 
     return blips;
 }
 
-export const getWaypoint = (layout: RadarLayout): Vector3 | undefined =>
-    getRadarBlips(layout).find(({ type, sprite }) => type === BlipType.Coord && sprite === layout.waypointSprite)?.position;
+export const getWaypoint = (layout: RadarLayout): Vector3 | undefined => {
+    const waypoint = getRadarBlips(layout).find(({ type, sprite }) => type === BlipType.Coord && sprite === layout.waypointSprite)?.position;
+
+    // z = 0 makes the teleport land on the ground once collision is loaded
+    return waypoint && (layout.isWaypointHeightKnown ? waypoint : { ...waypoint, z: 0 });
+}
 
 // not every game has getOffsetInWorldCoords / DOES_CHAR_EXIST (GTA III DE doesn't)
 const besideEntity = (entity: any): Vector3 => {

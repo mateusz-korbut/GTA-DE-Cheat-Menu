@@ -1,5 +1,5 @@
 /// <reference path='../../../../.config/vc.d.ts' />
-import { getMissionTargets, getWaypoint, RadarLayout } from '../../../functions/index';
+import { getMissionTargets, getWaypoint, RadarLayout, readPlainTrace } from '../../../functions/index';
 import { MissionTarget } from '../../../models/index';
 import { isMemoryFeatureSupported } from './script-space';
 
@@ -8,11 +8,9 @@ const VC_RADAR: RadarLayout = {
     traceRva: 0x5244C80,
     traceCount: 75,
     traceSize: 0x38,
-    positionOffset: 0x18,
-    inUseOffset: 0x27,
-    displayOffset: 0x32,
-    spriteOffset: 0x34,
+    readTrace: readPlainTrace({ position: 0x18, inUse: 0x27, display: 0x32, sprite: 0x34 }),
     waypointSprite: 0x28,
+    isWaypointHeightKnown: true,
 };
 
 export const getVcWaypoint = (): Vector3 | undefined => isMemoryFeatureSupported() ? getWaypoint(VC_RADAR) : undefined;

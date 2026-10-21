@@ -6,16 +6,18 @@ export interface GameBuild {
     build: string;
     scriptSpaceRva: number;
     mainCodeOffset: number;
+    // SCRIPT_NAME 'MAIN' as encoded by that game's main.scm (SA has a type byte before strings)
+    mainSignature?: number[];
 }
 
 const MAIN_SIGNATURE = [0xA4, 0x03, 0x4D, 0x41, 0x49, 0x4E, 0x00];
 
-const isScriptSpaceMatching = ({ scriptSpaceRva, mainCodeOffset }: GameBuild): boolean => {
+const isScriptSpaceMatching = ({ scriptSpaceRva, mainCodeOffset, mainSignature = MAIN_SIGNATURE }: GameBuild): boolean => {
     const scriptSpace = Memory.GetImageBase() + scriptSpaceRva;
 
     return Memory.ReadU8(scriptSpace, false) === 0x02
         && Memory.ReadU16(scriptSpace + 1, false) === 0x0100
-        && MAIN_SIGNATURE.every((byte, i) => Memory.ReadU8(scriptSpace + mainCodeOffset + i, false) === byte);
+        && mainSignature.every((byte, i) => Memory.ReadU8(scriptSpace + mainCodeOffset + i, false) === byte);
 }
 
 export const createBuildCheck = (gameBuild: GameBuild, features: string) => {
