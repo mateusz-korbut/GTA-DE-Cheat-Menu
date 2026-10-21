@@ -25,6 +25,8 @@ export const renderWeatherList = (weatherTypes: WeatherType, weatherId: WeatherI
         if (newWeatherId === RANDOM_WEATHER_ID) {
             Weather.Release();
         } else {
+            // FORCE_WEATHER alone only blends towards the new weather slowly
+            Weather.ForceNow(newWeatherId);
             Weather.Force(newWeatherId);
         }
     }

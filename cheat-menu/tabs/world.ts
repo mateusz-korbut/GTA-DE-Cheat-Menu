@@ -22,5 +22,6 @@ export class WorldTab extends Tab {
     }
 
     updateGameState() {
+        this.densitySubMenu.applySavedDensity();
     }
 }

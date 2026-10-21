@@ -9,11 +9,14 @@ export class IIIWeaponTab extends PlayerTab {
         ImGui.Text('Get weapon:');
         ImGui.Separator();
 
-        Object.entries(WeaponType).forEach(([name, weaponType]) => {
-            if (ImGui.Selectable(name, false)) {
-                this.playerChar.giveWeapon(weaponType, INFINITE_WEAPON_AMMO);
-            }
-        });
+        // CLEO Redux 1.5 enums are TS enums: skip the reverse "10" -> "Molotov" entries, the game needs the number
+        Object.entries(WeaponType)
+            .filter((entry): entry is [string, number] => typeof entry[1] === 'number')
+            .forEach(([name, weaponType]) => {
+                if (ImGui.Selectable(name, false)) {
+                    this.playerChar.giveWeapon(weaponType, INFINITE_WEAPON_AMMO);
+                }
+            });
     }
 
     updateGameState() {
