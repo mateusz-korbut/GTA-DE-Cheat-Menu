@@ -11,11 +11,12 @@ import {
 } from '../data/statistics';
 import { ZERO_THOUSAND_RANGE } from '../data/index';
 
-const addValueStatistic = ({ id, name, range }: Partial<Statistic>): Statistic => ({
+// the menu's Statistics enum uses the game's stat ids
+const addValueStatistic = ({ id, name, range }: Omit<Statistic, 'value'>): Statistic => ({
     id,
     name,
     range,
-    value: Stat.GetInt(id),
+    value: Stat.GetInt(id as number),
 });
 
 export class StatisticsTab extends Tab {
@@ -63,9 +64,9 @@ export class StatisticsTab extends Tab {
                 const difference = Math.abs(newValue - value);
 
                 if (newValue < value) {
-                    Stat.DecrementInt(id, difference);
+                    Stat.DecrementInt(id as number, difference);
                 } else {
-                    Stat.IncrementIntNoMessage(id, difference);
+                    Stat.IncrementIntNoMessage(id as number, difference);
                 }
 
                 statistics[statisticsIndex].value = newValue;

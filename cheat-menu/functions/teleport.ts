@@ -8,8 +8,10 @@ export const teleport = (char: MenuChar, to: Vector3 | undefined, heading?: numb
     const currentCar = char.getCurrentCar();
 
     // not every game has REQUEST_COLLISION (GTA III DE doesn't)
-    if (typeof Streaming.RequestCollision === 'function') {
-        Streaming.RequestCollision(x, y);
+    const streaming = Streaming as unknown as { RequestCollision?: (x: number, y: number) => void };
+
+    if (typeof streaming.RequestCollision === 'function') {
+        streaming.RequestCollision(x, y);
     }
 
     if (currentCar) {

@@ -5,7 +5,7 @@ import { CheatsTab } from '../../../tabs/index';
 import { MenuCar } from '../../../models';
 
 const SECTION = 'CHEATS';
-const SPEED_MULTIPLIER = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'SPEED_MULTIPLIER');
+const SPEED_MULTIPLIER = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'SPEED_MULTIPLIER') ?? 1.5;
 
 export class SaCheatsTab extends CheatsTab {
     private speedUpCarActive = getBoolean(SECTION, 'SPEED_CAR_ACTIVE');

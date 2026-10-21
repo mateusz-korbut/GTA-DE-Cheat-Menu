@@ -5,7 +5,7 @@ import { CarModMenu, CarPaintJobMenu } from '../sub-menus/index';
 import { CarTab } from '../../../tabs/index';
 
 export class SaCarTab extends CarTab {
-    protected currentCar: SaCar;
+    protected currentCar!: SaCar;
     private carModMenu?: CarModMenu;
     private carPaintJobMenu?: CarPaintJobMenu;
 
@@ -34,7 +34,7 @@ export class SaCarTab extends CarTab {
 
     protected clearCache() {
         super.clearCache();
-        this.carModMenu = null;
-        this.carPaintJobMenu = null;
+        this.carModMenu = undefined;
+        this.carPaintJobMenu = undefined;
     }
 }

@@ -81,7 +81,9 @@ export class SaCar extends MenuCar {
     }
 
     getColors(): { primaryColour: number; secondaryColour: number; } {
-        return this.car.getColors();
+        const { color1, color2 } = this.car.getColors();
+
+        return { primaryColour: color1, secondaryColour: color2 };
     }
 
     changeColor(primaryColor: number, secondaryColour: number) {

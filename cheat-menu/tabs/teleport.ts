@@ -268,7 +268,9 @@ export class TeleportTab extends PlayerTab {
             return cache.remaining;
         }
 
-        const remaining = locations.filter(({ x, y, z }) => World.IsAnyPickupAtCoords(x, y, z));
+        // pickup categories only exist in games with IS_ANY_PICKUP_AT_COORDS (not GTA III DE)
+        const world = World as unknown as { IsAnyPickupAtCoords: (x: number, y: number, z: number) => boolean };
+        const remaining = locations.filter(({ x, y, z }) => world.IsAnyPickupAtCoords(x, y, z));
         this.pickupCache[category] = { remaining, refreshedAt: Date.now() };
 
         return remaining;

@@ -1,4 +1,3 @@
-/// <reference path='../../.config/sa.d.ts' />
 import { MenuChar, WeaponCategory } from '../models/index';
 import { loadModel } from '../functions/index';
 

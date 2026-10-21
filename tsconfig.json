@@ -9,7 +9,9 @@
     "allowJs": true,           
     "outDir": "dist",                   
     "rootDir": ".",                   
-    "strict": true,                    
+    "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,                    
     "esModuleInterop": true,              
     "forceConsistentCasingInFileNames": true, 
     "skipLibCheck": true                  

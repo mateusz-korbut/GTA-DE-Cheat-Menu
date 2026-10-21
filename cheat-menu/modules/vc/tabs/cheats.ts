@@ -6,7 +6,7 @@ import { MenuCar } from '../../../models';
 import { completeIceCreamSales, isMemoryFeatureSupported, SIDE_MISSIONS } from '../functions/index';
 
 const SECTION = 'CHEATS';
-const SPEED_MULTIPLIER = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'SPEED_MULTIPLIER');
+const SPEED_MULTIPLIER = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'SPEED_MULTIPLIER') ?? 1.5;
 const SPEED_UP_INTERVAL = 250;
 
 export class VcCheatsTab extends CheatsTab {

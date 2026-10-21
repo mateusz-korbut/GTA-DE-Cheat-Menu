@@ -15,7 +15,7 @@ export abstract class MenuChar {
         weaponType: number;
         weaponAmmo: number;
         weaponModel: number;
-    };
+    } | undefined;
 
     abstract getCurrentCar(): MenuCar | undefined;
 

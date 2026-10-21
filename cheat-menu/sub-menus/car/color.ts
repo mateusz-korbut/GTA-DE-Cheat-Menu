@@ -46,17 +46,14 @@ export class CarColorMenu {
             || colorCached.green !== color.green
             || colorCached.blue !== color.blue;
 
-        if (colorChanged) {
-            colorCached = {
-                ...color,
-                colors: findNearestCarColors(this.colors, color),
-            };
-        }
+        const cache: ColorCache = colorChanged || !colorCached
+            ? { ...color, colors: findNearestCarColors(this.colors, color) }
+            : colorCached;
 
         ImGui.NewLine();
-        colorCached.id = this.renderNearestColors(colorCached.colors);
+        cache.id = this.renderNearestColors(cache.colors);
 
-        return colorCached;
+        return cache;
     }
 
     private renderNearestColors(colors: Color[]): number | undefined {

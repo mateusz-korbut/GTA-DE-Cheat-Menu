@@ -318,6 +318,9 @@ export interface Statistic {
     range?: StatisticRange;
 }
 
+// a statistic as listed in the menu, its value is read from the game
+export type StatisticDefinition = Omit<Statistic, 'value'>;
+
 export const ZERO_THOUSAND_RANGE: StatisticRange = {
     min: 0,
     max: 1000,
@@ -338,7 +341,7 @@ export const UNIQUE_JUMPS_RANGE: StatisticRange = {
     max: 70,
 };
 
-export const PLAYER_STATISTICS: Partial<Statistic>[] = [
+export const PLAYER_STATISTICS: StatisticDefinition[] = [
     {
         id: Statistics.Fat,
         name: 'Fat',
@@ -369,7 +372,7 @@ export const PLAYER_STATISTICS: Partial<Statistic>[] = [
     },
 ];
 
-export const DRIVING_STATISTICS: Partial<Statistic>[] = [
+export const DRIVING_STATISTICS: StatisticDefinition[] = [
     // {
     //     id: Statistics.DrivingSkill,
     //     name: 'Driving',
@@ -388,7 +391,7 @@ export const DRIVING_STATISTICS: Partial<Statistic>[] = [
     },
 ];
 
-export const WEAPON_STATISTICS: Partial<Statistic>[] = [
+export const WEAPON_STATISTICS: StatisticDefinition[] = [
     {
         id: Statistics.PistolSkill,
         name: 'Pistol',
@@ -435,7 +438,7 @@ export const WEAPON_STATISTICS: Partial<Statistic>[] = [
     },
 ];
 
-export const GIRLFRIEND_STATISTICS: Partial<Statistic>[] = [
+export const GIRLFRIEND_STATISTICS: StatisticDefinition[] = [
     {
         id: Statistics.ProgressWithDenise,
         name: 'Denise',
@@ -468,7 +471,7 @@ export const GIRLFRIEND_STATISTICS: Partial<Statistic>[] = [
     },
 ];
 
-export const COLLECTIBLES_STATISTICS: Partial<Statistic>[] = [
+export const COLLECTIBLES_STATISTICS: StatisticDefinition[] = [
     {
         id: Statistics.TagsSprayed,
         name: 'Tags',

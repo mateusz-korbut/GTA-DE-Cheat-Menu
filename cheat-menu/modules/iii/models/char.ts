@@ -51,7 +51,7 @@ export class IIIChar extends MenuChar {
 
     getWeaponInSlot(id: number) {
         log('GTA III getWeaponInSlot not supported');
-        return null;
+        return undefined;
     }
 
     getCurrentCar() {

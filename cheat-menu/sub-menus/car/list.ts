@@ -1,4 +1,3 @@
-/// <reference path='../../../.config/sa.d.ts' />
 import { CarCategory, CarOption } from '../../models';
 
 const MAX_CACHED_SEARCHES = 5;

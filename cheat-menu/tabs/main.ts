@@ -13,7 +13,7 @@ const BUTTON_SIZE = {
 
 export class MainTab extends PlayerTab {
     private readonly mainOptions = new MainOptions();
-    private wantedLevel = IniFile.ReadInt(CONFIG_PATH, SECTION, 'WANTED_LEVEL');
+    private wantedLevel = IniFile.ReadInt(CONFIG_PATH, SECTION, 'WANTED_LEVEL') ?? 0;
     private isMissionTimerFrozen = false;
     private isNeverTired = false;
 

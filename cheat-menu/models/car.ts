@@ -19,7 +19,7 @@ export abstract class MenuCar {
 
     abstract setCoordinates(x: number, y: number, z: number): MenuCar;
 
-    abstract setHeading(number: number);
+    abstract setHeading(heading: number): MenuCar;
 
     abstract setCarOnWheels(): MenuCar;
 

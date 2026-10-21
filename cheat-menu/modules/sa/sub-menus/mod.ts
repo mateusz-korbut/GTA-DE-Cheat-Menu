@@ -30,7 +30,7 @@ export class CarModMenu {
         }
 
         Object.entries(this.mods).forEach(([partName, mods]) => {
-            const currentModId = car.getCurrentMod(ModSlot[partName]);
+            const currentModId = car.getCurrentMod(ModSlot[partName as keyof typeof ModSlot]);
 
             if (NOT_REMOVABLE_MODS.includes(partName)) {
                 return this.renderNotRemovableModMenu(car, partName, mods, currentModId, buttonConfig);
@@ -92,8 +92,11 @@ export class CarModMenu {
     }
 
     private getCarSupportedMods(carId: number): CarAvailableMods {
-        return CAR_SUPPORTED_MODS[carId.toString()]?.reduce((supportedMods: CarAvailableMods, modId: number) => {
-            const { slot, name } = CAR_MODS[modId];
+        const supportedMods = CAR_SUPPORTED_MODS as Record<string, number[] | undefined>;
+        const carMods = CAR_MODS as Record<number, { slot: string, name: string }>;
+
+        return supportedMods[carId.toString()]?.reduce((supportedMods: CarAvailableMods, modId: number) => {
+            const { slot, name } = carMods[modId];
             const modOption = { id: modId, name };
 
             if (supportedMods[slot]) {
