@@ -84,7 +84,10 @@ export class CarModMenu {
     }
 
     private addMod(car: SaCar, modId: number) {
-        loadModel(modId);
+        if (!loadModel(modId)) {
+            showTextBox('Mod model failed to load');
+            return;
+        }
         car.addMod(modId);
     }
 

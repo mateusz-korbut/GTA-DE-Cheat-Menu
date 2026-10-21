@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Downtown #1",
+    "x": -856.65,
+    "y": 849.14,
+    "z": 10.6,
+    "heading": 290.0
+  },
+  {
+    "name": "Downtown #2",
+    "x": -832.9,
+    "y": 741.9,
+    "z": 10.6,
+    "heading": 270.0
+  },
+  {
+    "name": "Little Haiti #1",
+    "x": -847.2,
+    "y": -75.03,
+    "z": 10.8,
+    "heading": 346.0
+  },
+  {
+    "name": "Little Havana #1",
+    "x": -1194.7,
+    "y": -323.7,
+    "z": 11.1,
+    "heading": 270.0
+  },
+  {
+    "name": "Little Havana #2",
+    "x": -1169.6,
+    "y": -615.8,
+    "z": 11.0,
+    "heading": 270.0
+  },
+  {
+    "name": "Little Havana #3",
+    "x": -858.24,
+    "y": -635.1,
+    "z": 10.6,
+    "heading": 13.0
+  },
+  {
+    "name": "Little Havana #4",
+    "x": -970.4,
+    "y": -692.0,
+    "z": 10.3,
+    "heading": 267.4
+  },
+  {
+    "name": "Vice Point #1",
+    "x": 466.2,
+    "y": 1206.6,
+    "z": 19.0,
+    "heading": 270.0
+  },
+  {
+    "name": "Vice Point #2",
+    "x": 355.05,
+    "y": 1112.16,
+    "z": 24.5,
+    "heading": 110.0
+  },
+  {
+    "name": "Vice Point #3",
+    "x": 364.9,
+    "y": 1080.8,
+    "z": 18.0,
+    "heading": 176.5
+  },
+  {
+    "name": "Vice Point #4",
+    "x": 421.76,
+    "y": 1037.6,
+    "z": 18.1,
+    "heading": 316.0
+  },
+  {
+    "name": "Vice Point #5",
+    "x": 455.4,
+    "y": 789.7,
+    "z": 12.2,
+    "heading": 143.1
+  },
+  {
+    "name": "Vice Point #6",
+    "x": 383.2,
+    "y": 757.2,
+    "z": 11.0,
+    "heading": 0.0
+  },
+  {
+    "name": "Vice Point #7",
+    "x": 382.36,
+    "y": 210.63,
+    "z": 10.6,
+    "heading": 100.0
+  },
+  {
+    "name": "Washington Beach #1",
+    "x": 199.8,
+    "y": -474.8,
+    "z": 10.1,
+    "heading": 324.9
+  }
+]

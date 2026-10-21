@@ -59,7 +59,10 @@ export abstract class CarTab extends PlayerTab {
     }
 
     protected spawnCar(modelId: number) {
-        loadModel(modelId);
+        if (!loadModel(modelId)) {
+            showTextBox('Car model failed to load');
+            return;
+        }
 
         this.lastSpawnedCar?.delete();
 

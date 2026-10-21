@@ -1,13 +1,15 @@
 import { KeyCode, ImGuiCond } from '../.config/enums';
-import { Events } from './data/index';
 import { CONFIG_PATH } from './config';
+import { isShortcutPressed } from './functions/index';
 
 import { Tab } from './tabs/tab';
 
 type Tabs = { name: string, tab: Tab }[];
 
-const USER_INPUT_DELAY = 250;
 const CONFIG_SECTION = 'GUI';
+const INSTANCE_SECTION = 'RUNTIME';
+const INSTANCE_KEY = 'INSTANCE';
+const INSTANCE_CHECK_INTERVAL = 500;
 const GUI_CONFIG = {
     width: IniFile.ReadInt(CONFIG_PATH, CONFIG_SECTION, 'WIDTH') ?? 720,
     height: IniFile.ReadInt( CONFIG_PATH, CONFIG_SECTION, 'HEIGHT') ?? 1280,
@@ -20,6 +22,11 @@ const GUI_CONFIG = {
 
 export const renderGui = (tabs: Tabs) => {
     const tabNames = tabs.map(({ name }) => name).join(',');
+    // a newer menu instance (respawn via Ctrl+Space+R or a hot reload of the scripts) replaces this one;
+    // CLEO events need async scripts, so the latest instance id is kept in the config file instead
+    const instanceId = `${Date.now()}-${Math.floor(Math.random() * 1e9)}`;
+    IniFile.WriteString(instanceId, CONFIG_PATH, INSTANCE_SECTION, INSTANCE_KEY);
+    let lastInstanceCheck = Date.now();
 
     // FIXME asyncAwait freeze script after a while
     while (true) {
@@ -27,9 +34,18 @@ export const renderGui = (tabs: Tabs) => {
         // https://re.cleo.li/docs/en/script-lifecycle.html
         wait(0);
 
-        if (Pad.IsKeyPressed(KeyCode.F1)) {
+        if (Date.now() - lastInstanceCheck >= INSTANCE_CHECK_INTERVAL) {
+            lastInstanceCheck = Date.now();
+
+            const owner = IniFile.ReadString(CONFIG_PATH, INSTANCE_SECTION, INSTANCE_KEY);
+
+            if (owner && owner !== instanceId) {
+                break;
+            }
+        }
+
+        if (isShortcutPressed('gui-toggle', KeyCode.F1)) {
             GUI_CONFIG.show = !GUI_CONFIG.show;
-            wait(USER_INPUT_DELAY);
         }
 
         ImGui.BeginFrame('mk-gui');
@@ -55,4 +71,8 @@ export const renderGui = (tabs: Tabs) => {
 
         ImGui.EndFrame();
     }
+
+    ImGui.BeginFrame('mk-gui');
+    ImGui.SetCursorVisible(false);
+    ImGui.EndFrame();
 }

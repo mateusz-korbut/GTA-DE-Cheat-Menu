@@ -10,6 +10,21 @@
 
 Press `F1` key in game to open/close the menu.
 
+### Keyboard shortcuts
+
+| Keys | Action |
+| --- | --- |
+| `F1` | Open / close the menu |
+| `Ctrl + Space + R` | Restart the menu (the running instance closes itself) |
+| `F2` / `F3` / `F4` / `F5` | Add health & fix car / clear wanted level / flip car / save game (enable in *Cheats*) |
+| `Shift + W` / `Shift + S` | Speed up (repeats while held) / stop the car (Vice City, San Andreas) |
+| `Ctrl + S` / `Ctrl + T` / `Ctrl + Z` | Save position / teleport to it / go back to the position before the last teleport |
+| `Ctrl + R` | Save the current position with a name |
+| `F6` | Teleport to the map waypoint (Vice City*) |
+| `F7` | Teleport to the mission destination / target (Vice City*) |
+
+`F1`-`F7` and the `Ctrl` shortcuts fire once per key press.
+
 ## Features
 
 ### Main
@@ -33,6 +48,14 @@ Press `F1` key in game to open/close the menu.
 
 ![teleports.png](screenshots/teleports.png)
 
+Vice City also has:
+* **Hidden packages** (100) and **Rampages** (35) - only the ones not collected yet are listed, plus *Teleport to nearest*; the hidden package counter comes from the game.
+* **Unique stunt jumps** (36) - puts you 35 m before the ramp, facing it, with a running start (a car is needed).
+* **Store robberies** (15) - in front of the shopkeeper; aim at them to start the robbery.
+* **Teleport to waypoint** (`F6`) and **Mission targets** (`F7`, or pick one from the list: destinations, vehicles, people) *.
+
+Collectible coordinates were extracted from the game's `main.scm`.
+
 ### Statistic editor
 
 ![statistics.png](screenshots/statistics.png)
@@ -44,6 +67,10 @@ Press `F1` key in game to open/close the menu.
 ### Cheats
 
 ![cheats.png](screenshots/cheats.png)
+
+Vice City *Side missions* section *: complete Paramedic, Firefighter, Vigilante and Taxi Driver instantly (same rewards, 100% progress and completion flags as finishing the last level), and set the Cherry Popper ice cream sales to 50 during the ice cream mission.
+
+\* These features read/write game memory at offsets found in **GTA Vice City DE 1.0.113.21181 (Steam)**. On any other build they are switched off automatically (`cleo_redux.log` says which).
 
 ## Credits
 
@@ -57,7 +84,6 @@ Thanks to:
 * After alt-tab, the menu is no longer visible
 * Car hydraulics mod cannot be removed, but this may be inherent to how the game works.
 * Car colors may not apply correctly; unfortunately, I couldn't find a reliable source defining supported car color IDs.
-* Teleports in GTA Vice City sometimes freeze script; simply reload with Ctrl + Space + R
 
 ## Contributing
 

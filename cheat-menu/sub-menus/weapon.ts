@@ -12,9 +12,9 @@ export const renderWeaponList = (weaponCategories: WeaponCategory[], char: MenuC
             charOptionIndex,
         );
 
-        if (newWeaponIndex !== charOptionIndex) {
-            const newWeapon = options[newWeaponIndex];
+        const newWeapon = options[newWeaponIndex];
 
+        if (newWeaponIndex !== charOptionIndex && newWeapon) {
             loadModel(newWeapon.weaponModel);
             char.giveWeapon(newWeapon.id, infiniteAmmo);
         }

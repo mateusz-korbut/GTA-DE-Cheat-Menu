@@ -4,7 +4,7 @@ switch (HOST) {
         CLEO.runScript('./modules/iii/index[fs].ts');
         break;
     case 'vc_unreal':
-        CLEO.runScript('./modules/vc/index[fs].ts');
+        CLEO.runScript('./modules/vc/index[fs][mem].ts');
         break;
     case 'sa_unreal':
         CLEO.runScript('./modules/sa/index[fs].ts');

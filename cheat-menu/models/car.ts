@@ -27,6 +27,8 @@ export abstract class MenuCar {
 
     abstract speedUpCar(multiplier: number): MenuCar;
 
+    setForwardSpeed?(speed: number): MenuCar;
+
     abstract break(): MenuCar;
 
     abstract unlockDoors(): MenuCar;

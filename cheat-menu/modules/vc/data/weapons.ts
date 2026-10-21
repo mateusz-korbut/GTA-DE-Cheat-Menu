@@ -171,7 +171,7 @@ export const WEAPON_CATEGORIES: WeaponCategory[] = [
                 name: 'Uzi',
             },
             {
-                id: WeaponType.Ingram,
+                id: WeaponType.SilencedIngram,
                 weaponModel: WeaponModel.Ingram,
                 name: 'Ingram',
             },

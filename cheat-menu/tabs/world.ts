@@ -22,8 +22,5 @@ export class WorldTab extends Tab {
     }
 
     updateGameState() {
-        if (this.weatherType !== null) {
-            Weather.Force(this.weatherType);
-        }
     }
 }

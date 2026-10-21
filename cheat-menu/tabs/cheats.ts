@@ -1,5 +1,5 @@
 import { KeyCode } from '../../.config/enums';
-import { getBoolean, saveBoolean } from '../functions/index';
+import { getBoolean, isShortcutPressed, saveBoolean } from '../functions/index';
 import { MenuCar } from '../models/index';
 
 import { MAX_HEALTH } from '../data/index';
@@ -38,7 +38,12 @@ export class CheatsTab extends PlayerTab {
         }
     }
 
+    protected isAddHealthPressed = false;
+    protected isFlipCarPressed = false;
+
     updateGameState() {
+        this.isAddHealthPressed = isShortcutPressed('cheat-add-health', KeyCode.F2);
+        this.isFlipCarPressed = isShortcutPressed('cheat-flip-car', KeyCode.F4);
         this.checkCheatsShortcuts();
         this.checkCarShortcuts();
     }
@@ -47,15 +52,15 @@ export class CheatsTab extends PlayerTab {
     }
 
     private checkCheatsShortcuts() {
-        if (this.addHealthActive && Pad.IsKeyPressed(KeyCode.F2)) {
+        if (this.addHealthActive && this.isAddHealthPressed) {
             this.playerChar.setHealth(MAX_HEALTH);
         }
 
-        if (this.clearWantedLevelActive && Pad.IsKeyPressed(KeyCode.F3)) {
+        if (isShortcutPressed('cheat-clear-wanted', KeyCode.F3) && this.clearWantedLevelActive) {
             this.player.alterWantedLevel(0);
         }
 
-        if (this.saveGameActive && Pad.IsKeyPressed(KeyCode.F5)) {
+        if (isShortcutPressed('cheat-save-game', KeyCode.F5) && this.saveGameActive) {
             Game.ActivateSaveMenu();
         }
     }
@@ -64,11 +69,11 @@ export class CheatsTab extends PlayerTab {
         const car = this.playerChar.getCurrentCar();
 
         if (car) {
-            if (this.addHealthActive && Pad.IsKeyPressed(KeyCode.F2)) {
+            if (this.addHealthActive && this.isAddHealthPressed) {
                 car.fix();
             }
 
-            if (this.flipCarActive && Pad.IsKeyPressed(KeyCode.F4)) {
+            if (this.flipCarActive && this.isFlipCarPressed) {
                 car.setCarOnWheels();
             }
 

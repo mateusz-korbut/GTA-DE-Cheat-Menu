@@ -14,6 +14,8 @@ const BUTTON_SIZE = {
 export class MainTab extends PlayerTab {
     private readonly mainOptions = new MainOptions();
     private wantedLevel = IniFile.ReadInt(CONFIG_PATH, SECTION, 'WANTED_LEVEL');
+    private isMissionTimerFrozen = false;
+    private isNeverTired = false;
 
     renderTabUI() {
         renderMainActions(this.playerChar, BUTTON_SIZE);
@@ -40,8 +42,18 @@ export class MainTab extends PlayerTab {
             this.player.alterWantedLevel(this.wantedLevel);
         }
 
-        this.player.setNeverGetsTired(this.mainOptions.isNeverTired);
+        // only on change: the game itself grants "never tired" (Paramedic reward)
+        if (this.isNeverTired !== this.mainOptions.isNeverTired) {
+            this.isNeverTired = this.mainOptions.isNeverTired;
+            this.player.setNeverGetsTired(this.isNeverTired);
+        }
 
-        Hud.FreezeTimer(this.mainOptions.isMissionTimerFrozen);
+        // unfreezing only on change, so the option doesn't override timers frozen by missions
+        if (this.mainOptions.isMissionTimerFrozen) {
+            Hud.FreezeTimer(true);
+        } else if (this.isMissionTimerFrozen) {
+            Hud.FreezeTimer(false);
+        }
+        this.isMissionTimerFrozen = this.mainOptions.isMissionTimerFrozen;
     }
 }
