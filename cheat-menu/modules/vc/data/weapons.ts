@@ -17,7 +17,6 @@ enum WeaponModel {
     Katana = 268,
     Chainsaw = 269,
     Grenade = 270,
-    RemoteGrenade = null,
     Teargas = 271,
     Molotov = 272,
     Pistol = 274,
@@ -171,7 +170,7 @@ export const WEAPON_CATEGORIES: WeaponCategory[] = [
                 name: 'Uzi',
             },
             {
-                id: WeaponType.Ingram,
+                id: WeaponType.SilencedIngram,
                 weaponModel: WeaponModel.Ingram,
                 name: 'Ingram',
             },

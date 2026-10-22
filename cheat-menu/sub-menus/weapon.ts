@@ -1,4 +1,3 @@
-/// <reference path='../../.config/sa.d.ts' />
 import { MenuChar, WeaponCategory } from '../models/index';
 import { loadModel } from '../functions/index';
 
@@ -12,9 +11,9 @@ export const renderWeaponList = (weaponCategories: WeaponCategory[], char: MenuC
             charOptionIndex,
         );
 
-        if (newWeaponIndex !== charOptionIndex) {
-            const newWeapon = options[newWeaponIndex];
+        const newWeapon = options[newWeaponIndex];
 
+        if (newWeaponIndex !== charOptionIndex && newWeapon) {
             loadModel(newWeapon.weaponModel);
             char.giveWeapon(newWeapon.id, infiniteAmmo);
         }

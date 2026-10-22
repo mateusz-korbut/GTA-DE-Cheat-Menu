@@ -59,7 +59,10 @@ export abstract class CarTab extends PlayerTab {
     }
 
     protected spawnCar(modelId: number) {
-        loadModel(modelId);
+        if (!loadModel(modelId)) {
+            showTextBox('Car model failed to load');
+            return;
+        }
 
         this.lastSpawnedCar?.delete();
 
@@ -100,7 +103,7 @@ export abstract class CarTab extends PlayerTab {
 
     protected clearCache() {
         this.currentCarInvincible = false;
-        this.currentCarId = null;
-        this.carColorMenu = null;
+        this.currentCarId = undefined;
+        this.carColorMenu = undefined;
     }
 }

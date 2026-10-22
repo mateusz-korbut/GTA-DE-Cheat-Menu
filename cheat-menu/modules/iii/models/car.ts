@@ -80,7 +80,9 @@ export class IIICar extends MenuCar {
     }
 
     getColors() {
-        return this.car.getColors();
+        const { color1, color2 } = this.car.getColors();
+
+        return { primaryColour: color1, secondaryColour: color2 };
     }
 
     changeColor(primaryColor: number, secondaryColour: number) {

@@ -1,4 +1,4 @@
-/// <reference path='../../../../.config/sa.d.ts' />
+/// <reference path='../../../../.config/gta3.d.ts' />
 import { MenuPlayer } from '../../../models/index';
 
 import { IIIChar } from './char';

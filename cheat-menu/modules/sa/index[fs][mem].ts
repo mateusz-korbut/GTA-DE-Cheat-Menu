@@ -4,6 +4,7 @@ import { SAPlayer } from './models/index';
 
 import { MainTab, TeleportTab, WeaponTab, WorldTab } from '../../tabs/index';
 import { renderGui } from '../../gui';
+import { getSaMissionTargets, getSaWaypoint, isSaMemoryFeatureSupported } from './functions/index';
 
 import { SaCarTab, SaCheatsTab, StatisticsTab } from './tabs/index';
 
@@ -14,12 +15,19 @@ import { CAR_CATEGORIES, TELEPORT_OPTIONS, WEAPON_CATEGORIES } from './data/inde
 export const getSATabs = () => {
     const player = new SAPlayer(new Player(0));
     const playerChar = player.getChar();
+    const hasMemoryFeatures = isSaMemoryFeatureSupported();
 
     return [
         { name: 'Main', tab: new MainTab(player, playerChar) },
         { name: 'Weapons', tab: new WeaponTab(player, playerChar, WEAPON_CATEGORIES) },
         { name: 'Car', tab: new SaCarTab(player, playerChar, CAR_LIST, CAR_CATEGORIES, CAR_COLORS) },
-        { name: 'Teleport', tab: new TeleportTab(player, playerChar, TELEPORT_OPTIONS) },
+        { name: 'Teleport', tab: new TeleportTab(
+            player,
+            playerChar,
+            TELEPORT_OPTIONS,
+            hasMemoryFeatures ? getSaWaypoint : undefined,
+            hasMemoryFeatures ? getSaMissionTargets : undefined,
+        ) },
         { name: 'Statistics', tab: new StatisticsTab() },
         { name: 'World', tab: new WorldTab(WeatherType) },
         { name: 'Cheats', tab: new SaCheatsTab(player, playerChar) },

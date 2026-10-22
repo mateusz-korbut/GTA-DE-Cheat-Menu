@@ -1,4 +1,3 @@
-/// <reference path='../../../.config/sa.d.ts' />
 import { CarCategory, CarOption } from '../../models';
 
 const MAX_CACHED_SEARCHES = 5;
@@ -24,7 +23,6 @@ const renderCarListByName = (allCars: CarOption[], searchCarName: string) => {
     } else {
         carList = allCars.filter(({ name }) => name.toLowerCase().includes(searchCarName));
         addSearchToCache(searchCarName, carList);
-        log(searchCache);
     }
 
     for (const { id, name } of carList) {

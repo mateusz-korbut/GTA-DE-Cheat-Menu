@@ -7,12 +7,12 @@ export abstract class Tab {
     /*
     * This method is called when the tab is open and is responsible for generating the tab's UI layout
     * */
-    abstract renderTabUI();
+    abstract renderTabUI(): void;
 
     /*
     * It is called once per game frame, allowing you to execute any necessary logic or updates game logic.
     * */
-    abstract updateGameState();
+    abstract updateGameState(): void;
 }
 
 export abstract class PlayerTab extends Tab {

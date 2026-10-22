@@ -2,13 +2,24 @@ import { CONFIG_PATH } from '../../config';
 
 const SECTION = 'WORLD';
 const DENSITY = {
-    min: IniFile.ReadFloat(CONFIG_PATH, SECTION, 'MIN_DENSITY'),
-    max: IniFile.ReadFloat(CONFIG_PATH, SECTION, 'MAX_DENSITY'),
+    min: IniFile.ReadFloat(CONFIG_PATH, SECTION, 'MIN_DENSITY') ?? 0,
+    max: IniFile.ReadFloat(CONFIG_PATH, SECTION, 'MAX_DENSITY') ?? 2,
 };
 
 export class DensitySubMenu {
-    private pedDensity: number = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'PED_DENSITY');
-    private carDensity: number = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'CAR_DENSITY');
+    private pedDensity: number = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'PED_DENSITY') ?? 1;
+    private carDensity: number = IniFile.ReadFloat(CONFIG_PATH, SECTION, 'CAR_DENSITY') ?? 1;
+    private isSavedDensityApplied = false;
+
+    // the saved values are shown by the sliders, so the game has to use them too (once, when the menu starts)
+    applySavedDensity() {
+        if (this.isSavedDensityApplied) {
+            return;
+        }
+        this.isSavedDensityApplied = true;
+        World.SetPedDensityMultiplier(this.pedDensity);
+        World.SetCarDensityMultiplier(this.carDensity);
+    }
 
     renderDensityMenu() {
         if (!ImGui.CollapsingHeader('Density')) {

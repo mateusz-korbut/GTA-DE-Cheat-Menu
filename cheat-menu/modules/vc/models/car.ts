@@ -65,6 +65,12 @@ export class VcCar extends MenuCar {
         return this;
     }
 
+    setForwardSpeed(speed: number) {
+        this.car.setForwardSpeed(speed);
+
+        return this;
+    }
+
     break() {
         this.car.setForwardSpeed(0);
 
@@ -84,7 +90,9 @@ export class VcCar extends MenuCar {
     }
 
     getColors() {
-        return this.car.getColors();
+        const { color1, color2 } = this.car.getColors();
+
+        return { primaryColour: color1, secondaryColour: color2 };
     }
 
     changeColor(primaryColor: number, secondaryColour: number) {

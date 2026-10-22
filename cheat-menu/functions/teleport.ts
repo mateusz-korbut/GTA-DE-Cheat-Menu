@@ -1,16 +1,31 @@
 import { MenuChar } from '../models/index';
 
-export const teleport = (char: MenuChar, to: Vector3 | undefined) => {
+export const teleport = (char: MenuChar, to: Vector3 | undefined, heading?: number) => {
     if (!to) {
         return;
     }
     const { x, y, z } = to;
     const currentCar = char.getCurrentCar();
 
+    // not every game has REQUEST_COLLISION (GTA III DE doesn't)
+    const streaming = Streaming as unknown as { RequestCollision?: (x: number, y: number) => void };
+
+    if (typeof streaming.RequestCollision === 'function') {
+        streaming.RequestCollision(x, y);
+    }
+
     if (currentCar) {
         currentCar.setCoordinates(x, y, z);
+
+        if (heading !== undefined) {
+            currentCar.setHeading(heading);
+        }
     } else {
         char.setCoordinates(x, y, z);
+
+        if (heading !== undefined) {
+            char.setHeading?.(heading);
+        }
     }
 }
 

@@ -5,6 +5,10 @@ import { VcCar } from './car';
 
 import { INFINITE_WEAPON_AMMO } from '../../../data/index';
 
+// slots 3-9: thrown, pistols, shotguns, SMGs, rifles, heavy, sniper (1-2 are melee, 10 is camera/detonator)
+const FIRST_AMMO_SLOT = 3;
+const LAST_AMMO_SLOT = 9;
+
 export class VcChar extends MenuChar {
     constructor(private readonly char: Char) {
         super();
@@ -29,13 +33,13 @@ export class VcChar extends MenuChar {
     }
 
     addAmmo() {
-        this.char.addAmmo(WeaponType.Pistol, INFINITE_WEAPON_AMMO)
-            .addAmmo(WeaponType.Shotgun, INFINITE_WEAPON_AMMO)
-            .addAmmo(WeaponType.Mp5, INFINITE_WEAPON_AMMO)
-            .addAmmo(WeaponType.M4, INFINITE_WEAPON_AMMO)
-            .addAmmo(WeaponType.Sniper, INFINITE_WEAPON_AMMO)
-            .addAmmo(WeaponType.RocketLauncher, INFINITE_WEAPON_AMMO)
-            .addAmmo(WeaponType.Grenade, INFINITE_WEAPON_AMMO);
+        for (let slot = FIRST_AMMO_SLOT; slot <= LAST_AMMO_SLOT; slot++) {
+            const { weaponType, weaponAmmo } = this.char.getWeaponInSlot(slot);
+
+            if (weaponType > WeaponType.Unarmed && weaponAmmo < INFINITE_WEAPON_AMMO / 2) {
+                this.char.addAmmo(weaponType, INFINITE_WEAPON_AMMO - weaponAmmo);
+            }
+        }
 
         return this;
     }
@@ -60,6 +64,12 @@ export class VcChar extends MenuChar {
 
     setCoordinates(x: number, y: number, z: number) {
         this.char.setCoordinates(x, y, z);
+
+        return this;
+    }
+
+    setHeading(heading: number) {
+        this.char.setHeading(heading);
 
         return this;
     }

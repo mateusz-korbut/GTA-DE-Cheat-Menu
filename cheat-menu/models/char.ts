@@ -15,11 +15,13 @@ export abstract class MenuChar {
         weaponType: number;
         weaponAmmo: number;
         weaponModel: number;
-    };
+    } | undefined;
 
-    abstract getCurrentCar(): MenuCar;
+    abstract getCurrentCar(): MenuCar | undefined;
 
     abstract setCoordinates(x: number, y: number, z: number): MenuChar;
+
+    setHeading?(heading: number): MenuChar;
 
     abstract getPositionInFrontOfChar(): Vector3;
 

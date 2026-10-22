@@ -19,13 +19,15 @@ export abstract class MenuCar {
 
     abstract setCoordinates(x: number, y: number, z: number): MenuCar;
 
-    abstract setHeading(number: number);
+    abstract setHeading(heading: number): MenuCar;
 
     abstract setCarOnWheels(): MenuCar;
 
     abstract getOffsetInWorldCoords(x: number, y: number, z: number): { x: number, y: number, z: number };
 
     abstract speedUpCar(multiplier: number): MenuCar;
+
+    setForwardSpeed?(speed: number): MenuCar;
 
     abstract break(): MenuCar;
 

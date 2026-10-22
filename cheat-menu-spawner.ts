@@ -1,21 +1,15 @@
 import { KeyCode } from './.config/enums';
-import { Events } from './cheat-menu/data/index';
+import { isShortcutPressed } from './cheat-menu/functions/keys';
 
-const USER_INPUT_DEBOUNCE = 250;
-const CHEAT_MENU_SPAWN_TIMEOUT = 2000;
+const USER_INPUT_DEBOUNCE = 50;
 
 while (true) {
     wait(USER_INPUT_DEBOUNCE);
 
-    if (Pad.IsKeyPressed(KeyCode.Ctrl) && Pad.IsKeyPressed(KeyCode.Space) && Pad.IsKeyPressed(KeyCode.R)) {
-        dispatchEvent(Events.NewCheatMenuCreated);
-        wait(CHEAT_MENU_SPAWN_TIMEOUT);
-
+    if (isShortcutPressed('menu-respawn', KeyCode.Ctrl, KeyCode.Space, KeyCode.R)) {
+        // the new menu instance takes over and the running one exits by itself
         CLEO.runScript('./cheat-menu/index.ts');
 
-        const message = 'Cheat menu started';
-        FxtStore.insert('text', message);
-        Text.PrintHelp('text');
-        showTextBox(message);
+        showTextBox('Cheat menu started');
     }
 }

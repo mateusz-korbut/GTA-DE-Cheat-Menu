@@ -1,0 +1,254 @@
+[
+  {
+    "name": "Downtown #1 (northwestbound)",
+    "x": -660.13,
+    "y": 1130.44,
+    "z": 31.92,
+    "heading": 24.0
+  },
+  {
+    "name": "Downtown #2 (northwestbound)",
+    "x": -817.46,
+    "y": 1125.95,
+    "z": 33.94,
+    "heading": 38.0
+  },
+  {
+    "name": "Downtown #3 (eastbound)",
+    "x": -345.73,
+    "y": 1120.03,
+    "z": 49.74,
+    "heading": 252.0
+  },
+  {
+    "name": "Downtown #4 (northwestbound)",
+    "x": -505.07,
+    "y": 805.33,
+    "z": 100.72,
+    "heading": 45.0
+  },
+  {
+    "name": "Escobar Airport #1 (southbound)",
+    "x": -1342.38,
+    "y": -721.77,
+    "z": 30.67,
+    "heading": 162.9
+  },
+  {
+    "name": "Escobar Airport #2 (northeastbound)",
+    "x": -1240.2,
+    "y": -937.58,
+    "z": 21.0,
+    "heading": 317.3
+  },
+  {
+    "name": "Escobar Airport #3 (westbound)",
+    "x": -1305.03,
+    "y": -998.85,
+    "z": 21.11,
+    "heading": 89.0
+  },
+  {
+    "name": "Escobar Airport #4 (westbound)",
+    "x": -1453.11,
+    "y": -1049.31,
+    "z": 20.71,
+    "heading": 82.2
+  },
+  {
+    "name": "Escobar Airport #5 (northeastbound)",
+    "x": -1283.89,
+    "y": -1069.41,
+    "z": 24.02,
+    "heading": 294.9
+  },
+  {
+    "name": "Escobar Airport #6 (eastbound)",
+    "x": -1586.59,
+    "y": -1078.24,
+    "z": 21.12,
+    "heading": 274.2
+  },
+  {
+    "name": "Escobar Airport #7 (southwestbound)",
+    "x": -1521.31,
+    "y": -1216.83,
+    "z": 19.19,
+    "heading": 113.8
+  },
+  {
+    "name": "Escobar Airport #8 (eastbound)",
+    "x": -1630.68,
+    "y": -1274.33,
+    "z": 21.07,
+    "heading": 272.4
+  },
+  {
+    "name": "Little Haiti #1 (southbound)",
+    "x": -891.76,
+    "y": 294.62,
+    "z": 17.91,
+    "heading": 165.1
+  },
+  {
+    "name": "Little Haiti #2 (southbound)",
+    "x": -1019.29,
+    "y": 4.04,
+    "z": 17.18,
+    "heading": 192.7
+  },
+  {
+    "name": "Little Haiti #3 (southeastbound)",
+    "x": -968.49,
+    "y": -90.84,
+    "z": 17.18,
+    "heading": 227.5
+  },
+  {
+    "name": "Little Havana #1 (southwestbound)",
+    "x": -1021.78,
+    "y": -540.68,
+    "z": 23.86,
+    "heading": 144.9
+  },
+  {
+    "name": "Ocean Beach #1 (southbound)",
+    "x": 259.13,
+    "y": -910.83,
+    "z": 14.84,
+    "heading": 179.9
+  },
+  {
+    "name": "Ocean Beach #2 (eastbound)",
+    "x": 11.73,
+    "y": -957.9,
+    "z": 27.88,
+    "heading": 259.3
+  },
+  {
+    "name": "Ocean Beach #3 (eastbound)",
+    "x": 174.21,
+    "y": -967.6,
+    "z": 21.97,
+    "heading": 276.4
+  },
+  {
+    "name": "Ocean Beach #4 (northeastbound)",
+    "x": 194.52,
+    "y": -1177.91,
+    "z": 14.84,
+    "heading": 317.8
+  },
+  {
+    "name": "Ocean Beach #5 (southwestbound)",
+    "x": 134.37,
+    "y": -1205.02,
+    "z": 37.67,
+    "heading": 137.0
+  },
+  {
+    "name": "Ocean Beach #6 (southbound)",
+    "x": 11.43,
+    "y": -1211.12,
+    "z": 19.75,
+    "heading": 173.4
+  },
+  {
+    "name": "Ocean Beach #7 (southwestbound)",
+    "x": 25.82,
+    "y": -1295.76,
+    "z": 22.36,
+    "heading": 151.5
+  },
+  {
+    "name": "Prawn Island #1 (southwestbound)",
+    "x": 52.2,
+    "y": 919.48,
+    "z": 27.1,
+    "heading": 128.3
+  },
+  {
+    "name": "Starfish Island #1 (eastbound)",
+    "x": -380.61,
+    "y": -281.62,
+    "z": 14.93,
+    "heading": 254.9
+  },
+  {
+    "name": "Vice Point #1 (westbound)",
+    "x": 478.38,
+    "y": -109.63,
+    "z": 18.0,
+    "heading": 104.5
+  },
+  {
+    "name": "Vice Point #2 (northwestbound)",
+    "x": 348.78,
+    "y": -238.29,
+    "z": 44.37,
+    "heading": 64.5
+  },
+  {
+    "name": "Vice Point #3 (southwestbound)",
+    "x": 450.46,
+    "y": -302.51,
+    "z": 17.9,
+    "heading": 155.3
+  },
+  {
+    "name": "Viceport #1 (southbound)",
+    "x": -330.2,
+    "y": -1242.81,
+    "z": 12.93,
+    "heading": 195.2
+  },
+  {
+    "name": "Viceport #2 (southeastbound)",
+    "x": -336.65,
+    "y": -1348.18,
+    "z": 12.93,
+    "heading": 206.5
+  },
+  {
+    "name": "Washington Beach #1 (southbound)",
+    "x": 457.18,
+    "y": -348.56,
+    "z": 16.22,
+    "heading": 186.1
+  },
+  {
+    "name": "Washington Beach #2 (southbound)",
+    "x": 450.87,
+    "y": -469.89,
+    "z": 20.93,
+    "heading": 185.3
+  },
+  {
+    "name": "Washington Beach #3 (eastbound)",
+    "x": 224.06,
+    "y": -481.75,
+    "z": 16.69,
+    "heading": 271.9
+  },
+  {
+    "name": "Washington Beach #4 (westbound)",
+    "x": 496.54,
+    "y": -520.41,
+    "z": 20.93,
+    "heading": 93.0
+  },
+  {
+    "name": "Washington Beach #5 (northwestbound)",
+    "x": 303.21,
+    "y": -523.68,
+    "z": 18.0,
+    "heading": 32.4
+  },
+  {
+    "name": "Washington Beach #6 (southbound)",
+    "x": 382.86,
+    "y": -677.01,
+    "z": 21.89,
+    "heading": 159.8
+  }
+]
